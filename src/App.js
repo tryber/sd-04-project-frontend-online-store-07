@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import * as api from './services/api';
 
 function App() {
+  const searchDataFromAPI = () => {
+    async function fetchData() {
+      api.getCategories()
+      .then((categories) => { console.log(categories) })
+    }
+    fetchData();
+  }
   return (
     <div className="App">
+      {searchDataFromAPI()}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
