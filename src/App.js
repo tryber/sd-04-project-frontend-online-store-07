@@ -7,8 +7,8 @@ function App() {
   const searchDataFromAPI = () => {
     async function fetchData() {
       api.getCategories()
-      .then((categories) => { console.log(categories) });
-    };
+      .then((categories) => { console.log(categories) })
+    }
     fetchData();
   };
   return (
