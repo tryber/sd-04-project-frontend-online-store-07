@@ -8,9 +8,9 @@ function App() {
     async function fetchData() {
       api.getCategories()
       .then((categories) => { console.log(categories) });
-    }
+    };
     fetchData();
-  }
+  };
   return (
     <div className="App">
       {searchDataFromAPI()}
