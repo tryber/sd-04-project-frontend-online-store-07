@@ -5,7 +5,13 @@ function CheckInput(elem, ChangeFunction) {
   return (
     <p>
       <label htmlFor={elem.id} data-testid="category">
-        <input type="radio" id={elem.id} name="categorie" value={elem.name} onChange={ChangeFunction} />
+        <input
+          type="radio"
+          id={elem.id}
+          name="categorie"
+          value={elem.name}
+          onChange={ChangeFunction}
+        />
         {elem.name}
       </label>
     </p>
