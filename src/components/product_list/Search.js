@@ -13,9 +13,10 @@ class Search extends React.Component {
             value={value}
             placeholder="pesquisar"
             onChange={onChange}
+            className="search-input"
           />
         </label>
-        <button type="button" data-testid="query-button" onClick={onClick}>Buscar</button>
+        <button type="button" data-testid="query-button" className="button-input" onClick={onClick}>Buscar</button>
       </div>
     );
   }

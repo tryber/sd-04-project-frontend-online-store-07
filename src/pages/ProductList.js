@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
+import './ProductList.css';
 import * as api from '../services/api';
 
 class ProductList extends Component {
@@ -33,17 +34,23 @@ class ProductList extends Component {
     }
   }
 
-  SearchBarAndCategories() {
+  headerSearch() {
+    return (
+      <div className="search">
+        <Search
+          value={this.state.searchValue}
+          onChange={this.OnChangeSearchBar}
+          onClick={this.Requisition}
+        />
+      </div>
+    );
+  }
+
+
+  Categories() {
     return (
       <div>
-        <div className="search">
-          <Search
-            value={this.state.searchValue}
-            onChange={this.OnChangeSearchBar}
-            onClick={this.Requisition}
-          />
-        </div>
-        <div className="categorias">
+        <div className="categories">
           <p>Categorias:</p>
           <Categories onChange={this.Requisition} />
         </div>
@@ -56,7 +63,8 @@ class ProductList extends Component {
     if (products === '') {
       return (
         <div>
-          {this.SearchBarAndCategories()}
+          {this.headerSearch()}
+          {this.Categories()}
           <Link to="/cart" data-testid="shopping-cart-button">
             Comprar
           </Link>
@@ -68,9 +76,12 @@ class ProductList extends Component {
     }
     return (
       <div>
-        {this.SearchBarAndCategories()}
-        <div>
-          {products.map((elem) => <Product product={elem} />)}
+        {this.headerSearch()}
+        <div className="main">
+          {this.Categories()}
+          <div className="products">
+            {products.map((elem) => <Product product={elem} />)}
+          </div>
         </div>
       </div>
     );
