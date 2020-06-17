@@ -6,6 +6,7 @@ import ShoppingCart from './pages/ShoppingCart';
 // import Checkout from './pages/Checkout';
 // import NotFound from './pages/NotFound';
 
+
 function App() {
   return (
     <BrowserRouter>
