@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
+import Product from '../components/product_list/Product';
 
 class ProductList extends Component {
   constructor(props) {
