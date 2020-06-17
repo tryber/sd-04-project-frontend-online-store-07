@@ -1,7 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import * as api from './services/api';
+
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import ProductList from './pages/ProductList';
+// import ProductDetails from './pages/ProductDetails';
+// import ShoppingCart from './pages/ShoppingCart';
+// import Checkout from './pages/Checkout';
+// import NotFound from './pages/NotFound';
 
 function App() {
   const searchDataFromAPI = () => {
@@ -12,23 +16,18 @@ function App() {
     fetchData();
   };
   return (
-    <div className="App">
-      {searchDataFromAPI()}
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    {searchDataFromAPI()}
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={ProductList} />
+        {/* <Route exact path="/" component={ProductDetails} />
+        <Route exact path="/" component={ShoppingCart} />
+        <Route exact path="/checkout" component={Checkout} />
+      <Route component={NotFound} /> */}
+      </Switch>
+    </BrowserRouter>
+
   );
 }
 
