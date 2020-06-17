@@ -33,31 +33,7 @@ class ProductList extends Component {
     }
   }
 
-  render() {
-    const { products } = this.state;
-    if (products === '') {
-      return (
-        <div>
-          <div className="search">
-            <Search
-              value={this.state.searchValue}
-              onChange={this.OnChangeSearchBar}
-              onClick={this.Requisition}
-            />
-          </div>
-          <div className="categorias">
-            <p>Categorias:</p>
-            <Categories onChange={this.Requisition} />
-          </div>
-          <Link to="/cart" data-testid="shopping-cart-button">
-            Comprar
-          </Link>
-          <div data-testid="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
-          </div>
-        </div>
-      );
-    }
+  SearchBarAndCategories() {
     return (
       <div>
         <div className="search">
@@ -69,8 +45,30 @@ class ProductList extends Component {
         </div>
         <div className="categorias">
           <p>Categorias:</p>
-          <Categories onChange={this.OnChangeRequisition} />
+          <Categories onChange={this.Requisition} />
         </div>
+      </div>
+    );
+  }
+
+  render() {
+    const { products } = this.state;
+    if (products === '') {
+      return (
+        <div>
+          {this.SearchBarAndCategories()}
+          <Link to="/cart" data-testid="shopping-cart-button">
+            Comprar
+          </Link>
+          <div data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div>
+        {this.SearchBarAndCategories()}
         <div>
           {products.map((elem) => <Product product={elem} />)}
         </div>
