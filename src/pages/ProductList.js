@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ProductList extends Component {
   constructor(props) {
@@ -10,9 +11,14 @@ class ProductList extends Component {
     const { products } = this.state;
     if (products === '') {
       return (
-        <div data-testid="home-initial-message">
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </div>
+        <>
+          <Link to="/cart" data-testid="shopping-cart-button">
+            Comprar
+          </Link>
+          <div data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </div>
+        </>
       );
     }
     return <p>Deu ruim</p>;
