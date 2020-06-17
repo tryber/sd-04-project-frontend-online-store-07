@@ -1,10 +1,10 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import ProductList from "./pages/ProductList";
-// import ProductDetails from "./pages/ProductDetails";
-// import ShoppingCart from "./pages/ShoppingCart";
-// import Checkout from "./pages/Checkout";
-// import NotFound from "./pages/NotFound";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import ProductList from './pages/ProductList';
+// import ProductDetails from './pages/ProductDetails';
+// import ShoppingCart from './pages/ShoppingCart';
+// import Checkout from './pages/Checkout';
+// import NotFound from './pages/NotFound';
 
 function App() {
   return (
