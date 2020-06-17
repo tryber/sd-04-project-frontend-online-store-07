@@ -27,9 +27,7 @@ class Categories extends Component {
     if (!categories) return <span>Loading...</span>;
     return (
       <div>
-        {categories.map((elem) => {
-          return CheckInput(elem);
-        })}
+        {categories.map((elem) => CheckInput(elem))}
       </div>
     );
   }
