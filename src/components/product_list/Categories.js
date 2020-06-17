@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import * as api from '../../services/api';
 
-function CheckInput(elem) {
+function CheckInput(elem, ChangeFunction) {
   return (
     <p>
       <label htmlFor={elem.id} data-testid="category">
-        <input type="radio" id={elem.id} name="categorie" value={elem.name} />
+        <input
+          type="radio"
+          id={elem.id}
+          name="categorie"
+          value={elem.name}
+          onChange={ChangeFunction}
+        />
         {elem.name}
       </label>
     </p>
@@ -23,11 +29,12 @@ class Categories extends Component {
   }
 
   render() {
+    const { onChange } = this.props;
     const { categories } = this.state;
     if (!categories) return <span>Loading...</span>;
     return (
       <div>
-        {categories.map((elem) => CheckInput(elem))}
+        {categories.map((elem) => CheckInput(elem, onChange))}
       </div>
     );
   }
