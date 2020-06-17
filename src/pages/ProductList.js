@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class ProductList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      products: '',
-    };
+    this.state = { products: '' };
   }
 
   render() {
@@ -17,6 +15,7 @@ class ProductList extends Component {
         </div>
       );
     }
+    return <p>Deu ruim</p>;
   }
 }
 
