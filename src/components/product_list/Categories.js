@@ -15,24 +15,24 @@ class Categories extends Component {
     api.getCategories().then((results) => this.setState({ categories: results }));
   }
 
-  CheckInput() {
+  CheckInput(elem) {
     return (
-      this.state.categories.map((elem) => ({
+      <p>
         <label>
-          {elem.name}
           <input type="checkbox" id={elem.id} value={elem.name} />
+          {elem.name}
         </label>
-      }))
+      </p>
     );
   }
 
   render() {
     const { categories } = this.state;
-    console.log(categories);
+    if (!categories) return <span>Loading...</span>;
     return (
-      <form>
-        {this.CheckInput()}
-      </form>
+      <div>
+        {categories.map((elem) => (this.CheckInput(elem)))}
+      </div>
     );
   }
 }

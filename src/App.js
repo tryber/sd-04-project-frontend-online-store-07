@@ -5,13 +5,12 @@ import ProductList from './pages/ProductList';
 // import ShoppingCart from './pages/ShoppingCart';
 // import Checkout from './pages/Checkout';
 // import NotFound from './pages/NotFound';
-import Categories from './components/product_list/Categories';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Categories} />
+        <Route exact path="/" component={ProductList} />
         {/* <Route exact path="/" component={ProductDetails} />
         <Route exact path="/" component={ShoppingCart} />
         <Route exact path="/checkout" component={Checkout} />
