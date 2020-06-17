@@ -11,14 +11,14 @@ class ProductList extends Component {
     const { products } = this.state;
     if (products === '') {
       return (
-        <>
+        <div>
           <Link to="/cart" data-testid="shopping-cart-button">
             Comprar
           </Link>
           <div data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </div>
-        </>
+        </div>
       );
     }
     return <p>Deu ruim</p>;
