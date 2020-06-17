@@ -4,7 +4,7 @@ import * as api from '../../services/api';
 function CheckInput(elem) {
   return (
     <p>
-      <label htmlFor={elem.id}>
+      <label htmlFor={elem.id} data-testid="category">
         <input type="radio" id={elem.id} name="categorie" value={elem.name} />
         {elem.name}
       </label>
