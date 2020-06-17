@@ -16,7 +16,14 @@ class Search extends React.Component {
             className="search-input"
           />
         </label>
-        <button type="button" data-testid="query-button" className="button-input" onClick={onClick}>Buscar</button>
+        <button
+          type="button"
+          data-testid="query-button"
+          className="button-input"
+          onClick={onClick}
+        >
+          Buscar
+        </button>
       </div>
     );
   }

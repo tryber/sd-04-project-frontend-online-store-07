@@ -64,12 +64,14 @@ class ProductList extends Component {
       return (
         <div>
           {this.headerSearch()}
-          {this.Categories()}
-          <Link to="/cart" data-testid="shopping-cart-button">
-            Comprar
-          </Link>
-          <div data-testid="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
+          <div className="main">
+            {this.Categories()}
+            <Link to="/cart" data-testid="shopping-cart-button">
+              Comprar
+            </Link>
+            <div data-testid="home-initial-message">
+              Digite algum termo de pesquisa ou escolha uma categoria.
+            </div>
           </div>
         </div>
       );
