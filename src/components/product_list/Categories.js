@@ -6,7 +6,6 @@ class Categories extends Component {
     super(props);
     this.state = { categories: '' };
 
-    this.CheckInput = this.CheckInput.bind();
   }
 
   componentDidMount() {
