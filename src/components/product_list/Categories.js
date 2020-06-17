@@ -1,14 +1,12 @@
-import React, { Component } from "react";
-import * as api from "../../services/api";
+import React, { Component } from 'react';
+import * as api from '../../services/api';
 
 class Categories extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categories: '',
-    };
+    this.state = { categories: '' };
 
-    this.CheckInput = this.CheckInput.bind(this);
+    this.CheckInput = this.CheckInput.bind();
   }
 
   componentDidMount() {
@@ -18,8 +16,8 @@ class Categories extends Component {
   CheckInput(elem) {
     return (
       <p>
-        <label>
-          <input type="checkbox" id={elem.id} value={elem.name} />
+        <label htmlFor={elem.id}>
+          <input type="radio" id={elem.id} name="categorie" value={elem.name} />
           {elem.name}
         </label>
       </p>
@@ -29,11 +27,7 @@ class Categories extends Component {
   render() {
     const { categories } = this.state;
     if (!categories) return <span>Loading...</span>;
-    return (
-      <div>
-        {categories.map((elem) => (this.CheckInput(elem)))}
-      </div>
-    );
+    return <div>{categories.map((elem) => this.CheckInput(elem))}</div>;
   }
 }
 
