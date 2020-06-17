@@ -6,7 +6,14 @@ class Search extends React.Component {
     return (
       <div>
         <label htmlFor="searchBar">
-          <input type="text" name="searchBar" data-testid="query-input" value={value} placeholder="pesquisar" onChange={onChange} />
+          <input
+            type="text"
+            name="searchBar"
+            data-testid="query-input"
+            value={value}
+            placeholder="pesquisar"
+            onChange={onChange}
+          />
         </label>
         <button type="button" data-testid="query-button" onClick={onClick}>Buscar</button>
       </div>
