@@ -2,7 +2,7 @@ import React from 'react';
 
 class FormInput extends React.Component {
   render() {
-    const { name, label, test, type, value, className, caracters, onChange } = this.props;
+    const { name, label, test, type, value, holder, className, caracters, onChange } = this.props;
     return (
       <div>
         <label htmlFor={name}>
@@ -13,6 +13,7 @@ class FormInput extends React.Component {
             id={name}
             type={type}
             value={value}
+            placeholder={holder}
             className={className}
             maxLength={caracters}
             onChange={onChange}

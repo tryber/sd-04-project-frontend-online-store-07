@@ -1,21 +1,20 @@
 import React from 'react';
+import FormInput from '../FormInput';
 
 class Search extends React.Component {
   render() {
     const { value, onChange, onClick } = this.props;
     return (
       <div>
-        <label htmlFor="searchBar">
-          <input
-            type="text"
-            name="searchBar"
-            data-testid="query-input"
-            value={value}
-            placeholder="pesquisar"
-            onChange={onChange}
-            className="search-input"
-          />
-        </label>
+        <FormInput
+          label=""
+          name="searchBar"
+          test="query-input"
+          value={value}
+          holder="pesquisar"
+          onChange={onChange}
+          className="search-input"
+        />
         <button
           type="button"
           data-testid="query-button"
