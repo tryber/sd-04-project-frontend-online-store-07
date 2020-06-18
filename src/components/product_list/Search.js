@@ -7,13 +7,13 @@ class Search extends React.Component {
     return (
       <div>
         <FormInput
-        label="" 
-        name="searchBar" 
-        test="query-input" 
-        value={value} 
-        holder="pesquisar"
-        onChange={onChange}
-        className="search-input"
+          label=""
+          name="searchBar"
+          test="query-input"
+          value={value}
+          holder="pesquisar"
+          onChange={onChange}
+          className="search-input"
         />
         <button
           type="button"
