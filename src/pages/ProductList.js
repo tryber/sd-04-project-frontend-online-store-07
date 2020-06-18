@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
+import UserInfo from '../components/checkout/UserInfo';
 
 class ProductList extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class ProductList extends Component {
     if (products === '') {
       return (
         <div>
-          <div className="categorias">
+          {/* <div className="categorias">
             <p>Categorias:</p>
             <Categories />
           </div>
@@ -22,7 +23,8 @@ class ProductList extends Component {
           </Link>
           <div data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
-          </div>
+          </div> */}
+          <UserInfo />
         </div>
       );
     }

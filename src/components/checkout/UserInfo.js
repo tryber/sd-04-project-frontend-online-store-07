@@ -5,26 +5,24 @@ class UserInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {
-        fullName: '',
-        email: '',
-        cpf: '',
-        phone: '',
-        cep: '',
-        address: '',
-      },
+      fullName: '',
+      email: '',
+      cpf: '',
+      phone: '',
+      cep: '',
+      address: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    const { user } = this.state;
-    this.setState({ [user[event.target.name]]: event.target.value });
+    console.log(event);
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   renderNumbers() {
-    const { user: { cpf, phone, cep } } = this.state;
+    const { cpf, phone, cep } = this.state;
 
     return (
       <>
@@ -57,8 +55,7 @@ class UserInfo extends React.Component {
   }
 
   renderText() {
-    const { user: { fullName, email, address } } = this.state;
-
+    const { fullName, email, address } = this.state;
     return (
       <>
         <FormInput
@@ -91,9 +88,7 @@ class UserInfo extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          {this.renderText()}
-        </form>
+        <form>{this.renderText()}</form>
       </div>
     );
   }
