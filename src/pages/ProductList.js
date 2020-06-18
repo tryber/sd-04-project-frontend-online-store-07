@@ -2,19 +2,60 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
+import Search from '../components/product_list/Search';
+import './ProductList.css';
 import * as api from '../services/api';
 
 class ProductList extends Component {
   constructor(props) {
     super(props);
-    this.state = { products: '' };
-    this.OnChangeRequisition = this.OnChangeRequisition.bind(this);
+    this.state = { products: '', searchValue: '' };
+    this.OnChangeSearchBar = this.OnChangeSearchBar.bind(this);
+    this.Requisition = this.Requisition.bind(this);
   }
 
-  OnChangeRequisition(event) {
+  OnChangeSearchBar(event) {
+    this.setState({ searchValue: event.target.value });
+    console.log(this.state.searchValue);
+  }
+
+  Requisition(event) {
+    const query = this.state.searchValue;
     const categoryId = event.target.id;
-    api.getProductsFromCategoryAndQuery({ categoryId })
-      .then((results) => this.setState({ products: results.results }));
+    if (query && categoryId) {
+      api.getProductsFromCategoryAndQuery({ categoryId, query })
+        .then((results) => this.setState({ products: results.results }));
+    } else if (categoryId) {
+      api.getProductsFromCategoryAndQuery({ categoryId })
+        .then((results) => this.setState({ products: results.results }));
+    } else {
+      api.getProductsFromCategoryAndQuery({ query })
+        .then((results) => this.setState({ products: results.results }));
+    }
+  }
+
+  headerSearch() {
+    return (
+      <div className="search">
+        <Search
+          value={this.state.searchValue}
+          onChange={this.OnChangeSearchBar}
+          onClick={this.Requisition}
+        />
+      </div>
+    );
+  }
+
+
+  Categories() {
+    return (
+      <div>
+        <div className="categories">
+          <p>Categorias:</p>
+          <Categories onChange={this.Requisition} />
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -22,27 +63,27 @@ class ProductList extends Component {
     if (products === '') {
       return (
         <div>
-          <div className="categorias">
-            <p>Categorias:</p>
-            <Categories onChange={this.OnChangeRequisition} />
-          </div>
-          <Link to="/cart" data-testid="shopping-cart-button">
-            Comprar
-          </Link>
-          <div data-testid="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
+          {this.headerSearch()}
+          <div className="main">
+            {this.Categories()}
+            <Link to="/cart" data-testid="shopping-cart-button">
+              Comprar
+            </Link>
+            <div data-testid="home-initial-message">
+              Digite algum termo de pesquisa ou escolha uma categoria.
+            </div>
           </div>
         </div>
       );
     }
     return (
       <div>
-        <div className="categorias">
-          <p>Categorias:</p>
-          <Categories onChange={this.OnChangeRequisition} />
-        </div>
-        <div>
-          {products.map((elem) => <Product product={elem} />)}
+        {this.headerSearch()}
+        <div className="main">
+          {this.Categories()}
+          <div className="products">
+            {products.map((elem) => <Product product={elem} />)}
+          </div>
         </div>
       </div>
     );

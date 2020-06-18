@@ -3,7 +3,7 @@ import * as api from '../../services/api';
 
 function CheckInput(elem, ChangeFunction) {
   return (
-    <p>
+    <p className="category">
       <label htmlFor={elem.id} data-testid="category">
         <input
           type="radio"
