@@ -13,9 +13,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={ProductList} />
         <Route exact path="/cart" component={ShoppingCart} />
-        {/* <Route exact path="/" component={ProductDetails} />
+        {/* <Route exact path="/" component={ProductDetails} /> */}
         <Route exact path="/checkout" component={Checkout} />
-      <Route component={NotFound} /> */}
+      {/* <Route component={NotFound} /> */}
       </Switch>
     </BrowserRouter>
   );
