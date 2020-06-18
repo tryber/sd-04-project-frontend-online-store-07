@@ -24,7 +24,7 @@ class UserInfo extends React.Component {
     const { cpf, phone, cep } = this.state;
 
     return (
-      <>
+      <form>
         <FormInput
           label="CPF"
           caracters={11}
@@ -49,14 +49,14 @@ class UserInfo extends React.Component {
           test="checkout-cep"
           onChange={this.handleChange}
         />
-      </>
+      </form>
     );
   }
 
   renderText() {
     const { fullName, email, address } = this.state;
     return (
-      <>
+      <div>
         <FormInput
           label="Nome Completo"
           name="fullName"
@@ -80,14 +80,14 @@ class UserInfo extends React.Component {
           test="checkout-address"
           onChange={this.handleChange}
         />
-      </>
+      </div>
     );
   }
 
   render() {
     return (
       <div>
-        <form>{this.renderText()}</form>
+        {this.renderText()}
       </div>
     );
   }
