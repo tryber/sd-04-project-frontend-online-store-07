@@ -7,9 +7,7 @@ import * as api from '../services/api';
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      product: '',
-    };
+    this.state = { product: '' };
   }
 
   componentDidMount() {
