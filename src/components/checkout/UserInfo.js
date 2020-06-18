@@ -17,8 +17,7 @@ class UserInfo extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event);
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.nativeEvent.target.name]: event.nativeEvent.target.value });
   }
 
   renderNumbers() {
@@ -27,27 +26,27 @@ class UserInfo extends React.Component {
     return (
       <>
         <FormInput
-          label='CPF'
+          label="CPF"
           caracters={11}
-          name='cpf'
+          name="cpf"
           value={cpf}
-          test='checkout-cpf'
+          test="checkout-cpf"
           onChange={this.handleChange}
         />
         <FormInput
-          label='Telefone'
+          label="Telefone"
           caracters={14}
-          name='phone'
+          name="phone"
           value={phone}
-          test='checkout-phone'
+          test="checkout-phone"
           onChange={this.handleChange}
         />
         <FormInput
-          label='CEP'
+          label="CEP"
           caracters={8}
-          name='cep'
+          name="cep"
           value={cep}
-          test='checkout-cep'
+          test="checkout-cep"
           onChange={this.handleChange}
         />
       </>
@@ -59,26 +58,26 @@ class UserInfo extends React.Component {
     return (
       <>
         <FormInput
-          label='Nome Completo'
-          name='fullName'
+          label="Nome Completo"
+          name="fullName"
           value={fullName}
-          test='checkout-fullname'
+          test="checkout-fullname"
           onChange={this.handleChange}
         />
         <FormInput
-          label='Email'
-          type='email'
-          name='email'
+          label="Email"
+          type="email"
+          name="email"
           value={email}
-          test='checkout-email'
+          test="checkout-email"
           onChange={this.handleChange}
         />
         {this.renderNumbers()}
         <FormInput
-          label='Endereço'
-          name='address'
+          label="Endereço"
+          name="address"
           value={address}
-          test='checkout-address'
+          test="checkout-address"
           onChange={this.handleChange}
         />
       </>

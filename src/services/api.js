@@ -7,14 +7,15 @@ export async function getCategories() {
   });
 }
 
-export async function getProductsFromCategoryAndQuery(categoryId, query) {
+export async function getProductsFromCategoryAndQuery({ categoryId, query }) {
   let url = '';
   if (categoryId && query) url = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}&q=${query}`;
-  if (categoryId) url = `https://api.mercadolibre.com/sites/MLB/search?category=$${categoryId}`;
+  if (categoryId) url = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`;
   if (query) url = `https://api.mercadolibre.com/sites/MLB/search?q=${query}`;
   return new Promise((resolve) => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => resolve(data));
+      .then((data) => resolve(data))
+      .catch(console.error('Nenhum produto foi encontrado!'));
   });
 }
