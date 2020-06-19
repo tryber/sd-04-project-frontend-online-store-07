@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
-import * as api from '../services/apiId';
+import getItemForId from '../services/apiId';
 
 
 class ProductDetails extends React.Component {
@@ -12,7 +12,7 @@ class ProductDetails extends React.Component {
 
   componentDidMount() {
     const searchId = this.props.match.params.id;
-    api.getItemForId(searchId).then((resolve) => this.setState({ product: resolve }));
+    getItemForId(searchId).then((resolve) => this.setState({ product: resolve }));
   }
 
   render() {
