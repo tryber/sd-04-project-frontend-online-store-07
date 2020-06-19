@@ -1,9 +1,9 @@
 /* eslint-disable no-useless-constructor */
+import { Link } from 'react-router-dom';
 import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
 import getItemForId from '../services/apiId';
 import './ProductDetails.css';
-
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -21,6 +21,9 @@ class ProductDetails extends React.Component {
     return (
       <div>
         <InfoProduct product={product} />
+        <Link to="/cart" data-testid="shopping-cart-button">
+              Ir para o Carrinho
+            </Link>
       </div>
     );
   }

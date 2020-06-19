@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
+<<<<<<< HEAD
 import freeShipping from '../../media/shipp.png';
 import AddAndDecrease from './AddAndDecrease';
 
@@ -13,6 +13,10 @@ function FreeShipping() {
     />
   );
 }
+=======
+import AddToCart from '../addToCartButton';
+import Image from '../image';
+>>>>>>> 356f34cfee8993649bf3eb21b952b6ea61581319
 
 class infoProduct extends React.Component {
   constructor(props) {
@@ -57,7 +61,7 @@ class infoProduct extends React.Component {
             <AddAndDecrease callback={this.HandleAddDecrease} value={quantity} />
           </div>
           <div className="buttomShop">
-            <Link to="/cart" data-testid="product-detail-add-to-cart">Ir para o Carrinho</Link>
+            <AddToCart item={this.props.product} testid="product-detail-add-to-cart" />
           </div>
         </div>
       </div>

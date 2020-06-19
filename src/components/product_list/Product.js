@@ -13,10 +13,12 @@ class Product extends React.Component {
           <p>{`Preço: ${price}`}</p>
           <div className="button-container">
             <div className="buttomShop">
-              <Link to={`/product/${id}`} data-testid="product-detail-link">Ver detalhes</Link>
+              <Link to={`/product/${id}`} data-testid="product-detail-link">
+                Ver detalhes
+              </Link>
             </div>
             <div className="buttomShop">
-              <Link to="/cart" data-testid="product-add-to-cart">Ir para o Carrinho</Link>
+              <AddToCart testid="product-add-to-cart" item={product} />
             </div>
           </div>
         </div>
