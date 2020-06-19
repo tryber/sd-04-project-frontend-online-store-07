@@ -6,6 +6,13 @@ import Search from '../components/product_list/Search';
 import './ProductList.css';
 import * as api from '../services/api';
 
+function goToChart() {
+  return (
+    <Link to="/cart" data-testid="shopping-cart-button">
+      Ir para o Carrinho
+    </Link>
+  );
+}
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -50,14 +57,6 @@ class ProductList extends Component {
     );
   }
 
-  goToChart() {
-    return (
-      <Link to="/cart" data-testid="shopping-cart-button">
-        Ir para o Carrinho
-      </Link>
-    );
-  }
-
   Categories() {
     return (
       <div>
@@ -77,7 +76,7 @@ class ProductList extends Component {
           {this.headerSearch()}
           <div className="main">
             {this.Categories()}
-            {this.goToChart()}
+            {goToChart()}
             <div data-testid="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
             </div>
@@ -88,7 +87,7 @@ class ProductList extends Component {
     return (
       <div>
         {this.headerSearch()}
-        {this.goToChart()}
+        {goToChart()}
         <div className="main">
           {this.Categories()}
           <div className="products">
