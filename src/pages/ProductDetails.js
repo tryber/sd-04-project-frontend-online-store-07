@@ -4,8 +4,6 @@ import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
 import getItemForId from '../services/apiId';
 
-
-
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);

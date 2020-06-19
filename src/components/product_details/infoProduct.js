@@ -1,17 +1,6 @@
 import React from 'react';
-import freeShipping from '../../media/shipp.png';
 import AddToCart from '../addToCartButton';
-
-function FreeShipping() {
-  return (
-    <img
-      className="shippImage"
-      data-testid="free-shipping"
-      src={freeShipping}
-      alt="Free Shipping"
-    />
-  );
-}
+import Image from '../image';
 
 class infoProduct extends React.Component {
   render() {
@@ -22,10 +11,7 @@ class infoProduct extends React.Component {
       <div className="container">
         <div className="product">
           <h3 data-testid="product-detail-name">{title}</h3>
-          <div className="images">
-            <img src={thumbnail} alt={title} />
-            {shipping.free_shipping && FreeShipping()}
-          </div>
+          <Image thumbnail={thumbnail} title={title} shipping={shipping.free_shipping} />
           <p>{`Preço: $${price}`}</p>
           <p>Quantidade Disponível: {availableQuantity}</p>
           <div>
