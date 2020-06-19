@@ -1,5 +1,5 @@
 import React from 'react';
-import UserInfo from '../components/checkout/UserInfo'
+import UserInfo from '../components/checkout/UserInfo';
 
 class Checkout extends React.Component {
   render() {
