@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
+import Dropdown from '../components/product_list/Dropdown';
 import './ProductList.css';
 import * as api from '../services/api';
 
@@ -19,11 +20,11 @@ class ProductList extends Component {
     this.state = { products: '', searchValue: '' };
     this.OnChangeSearchBar = this.OnChangeSearchBar.bind(this);
     this.Requisition = this.Requisition.bind(this);
+    this.handleChangeSort = this.handleChangeSort.bind(this);
   }
 
   OnChangeSearchBar(event) {
     this.setState({ searchValue: event.target.value });
-    console.log(this.state.searchValue);
   }
 
   Requisition(event) {
@@ -68,8 +69,23 @@ class ProductList extends Component {
     );
   }
 
+  handleChangeSort(event) {
+    const { value } = event.target;
+    const { products } = this.state;
+
+    if (value === 'maior') {
+      const sortedProductsAsc = products.sort((a, b) => (b.price - a.price));
+      this.setState({ products: sortedProductsAsc });
+    }
+    if (value === 'menor') {
+      const sortedProductsDsc = products.sort((a, b) => (a.price - b.price));
+      this.setState({ products: sortedProductsDsc });
+    }
+  }
+
   render() {
     const { products } = this.state;
+
     if (products === '') {
       return (
         <div>
@@ -89,11 +105,13 @@ class ProductList extends Component {
         {this.headerSearch()}
         {goToChart()}
         <div className="main">
+          <Dropdown sort={this.handleChangeSort} />
           {this.Categories()}
           <div className="products">
             {products.map((elem) => (
-              <Product product={elem} />
+              <Product key={elem.id} product={elem} />
             ))}
+
           </div>
         </div>
       </div>
