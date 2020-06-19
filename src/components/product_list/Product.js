@@ -11,8 +11,13 @@ class Product extends React.Component {
           <h3>{title}</h3>
           <img src={thumbnail} alt={title} />
           <p>{`Preço: ${price}`}</p>
-          <div className="buttomShop">
-            <Link to={`/product/${id}`} data-testid="product-detail-link">Ver detalhes</Link>
+          <div className="button-container">
+            <div className="buttomShop">
+              <Link to={`/product/${id}`} data-testid="product-detail-link">Ver detalhes</Link>
+            </div>
+            <div className="buttomShop">
+              <Link to={"/cart"} data-testid="product-add-to-cart">Ir para o Carrinho</Link>
+            </div>
           </div>
         </div>
       </div>
