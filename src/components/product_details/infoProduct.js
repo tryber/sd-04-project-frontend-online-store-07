@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import freeShipping from '../../media/freeShipping.jpeg';
+import freeShipping from '../../media/shipp.png';
 
 class infoProduct extends React.Component {
   render() {
@@ -14,7 +14,8 @@ class infoProduct extends React.Component {
           <div className="images">
             <img src={thumbnail} alt={title} />
             {(shipping.free_shipping)
-            && <img className="shippImage" data-testid="free-shipping" src={freeShipping} alt="Free Shipping" /> }
+            && <img className="shippImage" data-testid="free-shipping"
+              src={freeShipping} alt="Free Shipping" /> }
           </div>
           <p>{`Preço: $${price}`}</p>
           <p>Quantidade Disponível: {availableQuantity}</p>
