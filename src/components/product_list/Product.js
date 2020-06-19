@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Product.css';
+import AddToCart from '../../components/addToCartButton';
 
 class Product extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class Product extends React.Component {
               </Link>
             </div>
             <div className="buttomShop">
-              <AddToCart testid="product-add-to-cart" item={product} />
+              <AddToCart testid="product-add-to-cart" item={this.props.product} />
             </div>
           </div>
         </div>
