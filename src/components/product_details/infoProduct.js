@@ -25,7 +25,7 @@ class infoProduct extends React.Component {
             </ul>
           </div>
           <div className="buttomShop">
-            <Link to='/cart' data-testid='product-detail-add-to-cart'>Ir para o Carrinho</Link>
+            <Link to="/cart" data-testid="product-detail-add-to-cart">Ir para o Carrinho</Link>
           </div>
         </div>
       </div>
