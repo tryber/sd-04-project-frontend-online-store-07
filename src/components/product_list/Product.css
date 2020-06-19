@@ -22,3 +22,9 @@ a:link {
   padding: 3%;
   text-align: center;
 }
+
+.buttom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
