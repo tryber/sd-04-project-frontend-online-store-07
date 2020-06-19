@@ -3,6 +3,17 @@ import React from 'react';
 import freeShipping from '../../media/shipp.png';
 
 class infoProduct extends React.Component {
+  FreeShipping() {
+    return (
+      <img
+        className="shippImage"
+        data-testid="free-shipping"
+        src={freeShipping}
+        alt="Free Shipping"
+      />
+    );
+  }
+
   render() {
     const { price, thumbnail, title, attributes, shipping } = this.props.product;
     const availableQuantity = this.props.product.available_quantity;
@@ -13,9 +24,7 @@ class infoProduct extends React.Component {
           <h3 data-testid="product-detail-name">{title}</h3>
           <div className="images">
             <img src={thumbnail} alt={title} />
-            {(shipping.free_shipping)
-            && <img className="shippImage" data-testid="free-shipping"
-              src={freeShipping} alt="Free Shipping" /> }
+            {(shipping.free_shipping) && this.FreeShipping() }
           </div>
           <p>{`Preço: $${price}`}</p>
           <p>Quantidade Disponível: {availableQuantity}</p>
