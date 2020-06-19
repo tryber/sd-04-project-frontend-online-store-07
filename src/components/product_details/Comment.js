@@ -24,9 +24,6 @@ class Comment extends React.Component {
   }
 
   handleClick(event) {
-    console.log(event.target.value);
-    console.log(this.state.comment)
-    console.log(this.state.rating)
     this.setState({ post: true });
   }
 
@@ -38,10 +35,15 @@ class Comment extends React.Component {
     const { comment, rating } = this.state;
     return (
       <div>
-        <FormComment comment={comment} starsChange={this.ratingChanged} onClick={this.handleClick} onChange={this.handleComment} />
+        <FormComment
+          comment={comment}
+          starsChange={this.ratingChanged}
+          onClick={this.handleClick}
+          onChange={this.handleComment}
+        />
         {this.state.post && post(rating, comment)}
       </div>
-    )
+    );
   }
 }
 
