@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -50,6 +51,13 @@ class ShoppingCart extends React.Component {
         <i data-testeid="shopping-cart-button" />
         <p>Carrinho de Compras</p>
         {this.renderItems()}
+        <div>
+          <Link to="/checkout">
+            <button type="button" data-testid="checkout-products">
+              Concluir Compra
+            </button>
+          </Link>
+        </div>
       </div>
     );
   }
