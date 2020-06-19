@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
-import * as api from '../services/api';
+import * as api from '../services/apiId';
 
 
 class ProductDetails extends React.Component {

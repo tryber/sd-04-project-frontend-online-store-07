@@ -19,11 +19,3 @@ export async function getProductsFromCategoryAndQuery({ categoryId, query }) {
       .catch(console.error('Nenhum produto foi encontrado!'));
   });
 }
-
-export async function getItemForId(id) {
-  return new Promise((resolve) => {
-    fetch(`https://api.mercadolibre.com/items/${id}`)
-      .then((res) => res.json())
-      .then((data) => resolve(data));
-  });
-}
