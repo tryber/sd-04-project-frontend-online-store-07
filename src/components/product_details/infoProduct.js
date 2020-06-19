@@ -23,7 +23,7 @@ class infoProduct extends React.Component {
         <div className="">
           <h3 data-testid="">{title}</h3>
           <div className="images">
-            <img src={thumbnail} alt={title} />
+            <img src={thumbnail} className="image-detail" alt={title} />
             {(shipping.free_shipping) && FreeShipping() }
           </div>
           <p>{`Preço: $${price}`}</p>
