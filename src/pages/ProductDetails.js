@@ -2,7 +2,7 @@
 import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
 import getItemForId from '../services/apiId';
-import './PorductDetails.css';
+import './ProductDetails.css';
 
 
 class ProductDetails extends React.Component {

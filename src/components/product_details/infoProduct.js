@@ -19,9 +19,9 @@ class infoProduct extends React.Component {
     const availableQuantity = this.props.product.available_quantity;
     if (!this.props.product) return <h1>Loading...</h1>;
     return (
-      <div className="container">
-        <div className="product">
-          <h3 data-testid="product-detail-name">{title}</h3>
+      <div className="">
+        <div className="">
+          <h3 data-testid="">{title}</h3>
           <div className="images">
             <img src={thumbnail} alt={title} />
             {(shipping.free_shipping) && FreeShipping() }
