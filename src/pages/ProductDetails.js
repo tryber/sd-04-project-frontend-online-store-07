@@ -4,6 +4,7 @@ import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
 import getItemForId from '../services/apiId';
 import './ProductDetails.css';
+import Comment from '../components/product_details/Comment';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class ProductDetails extends React.Component {
         <InfoProduct product={product} />
         <Link to="/cart" data-testid="shopping-cart-button">
               Ir para o Carrinho
-            </Link>
+        </Link>
+        <Comment />
       </div>
     );
   }
