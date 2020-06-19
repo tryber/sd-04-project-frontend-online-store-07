@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 class infoProduct extends React.Component {
   render() {
     const { price, thumbnail, title, attributes } = this.props.product;
     console.log(attributes);
     const availableQuantity = this.props.product.available_quantity;
-    if(!this.props.product) return <h1>Loading...</h1>;
+    if (!this.props.product) return <h1>Loading...</h1>;
     return (
       <div className="container">
         <div className="product">
@@ -25,7 +25,7 @@ class infoProduct extends React.Component {
             </ul>
           </div>
           <div className="buttomShop">
-            <Link to={"/cart"} data-testid="product-detail-add-to-cart">Ir para o Carrinho</Link>
+            <Link to='/cart' data-testid='product-detail-add-to-cart'>Ir para o Carrinho</Link>
           </div>
         </div>
       </div>
