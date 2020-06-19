@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 class infoProduct extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+  }
+
   render() {
     const { price, thumbnail, title } = this.props.product;
     const availableQuantity = this.props.product.available_quantity;
@@ -14,7 +19,7 @@ class infoProduct extends React.Component {
           <p>Quantidade Disponível: {availableQuantity}</p>
           <p>Informações Adicionais: </p>
           <div className="buttomShop">
-            <Link to="/cart">Ir para o Carrinho</Link>
+            <Link to={'/cart'}>Ir para o Carrinho</Link>
           </div>
         </div>
       </div>
