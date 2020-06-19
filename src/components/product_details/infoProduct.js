@@ -46,7 +46,7 @@ class infoProduct extends React.Component {
             <p>Informações Adicionais: </p>
             <ul>
               {attributes.map((attribute) => (<li key={attribute.id}>
-                  {attribute.name}: {attribute.value_name}</li>))}
+                {attribute.name}: {attribute.value_name}</li>))}
             </ul>
           </div>
           <div>
