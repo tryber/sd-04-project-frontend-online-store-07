@@ -32,6 +32,7 @@ class ProductList extends Component {
       api.getProductsFromCategoryAndQuery({ query })
         .then((results) => this.setState({ products: results.results }));
     }
+    this.setState({ products: '', searchValue: '' });
   }
 
   headerSearch() {
