@@ -23,7 +23,7 @@ class Comment extends React.Component {
     this.setState({ rating: newRating });
   }
 
-  handleClick(event) {
+  handleClick() {
     this.setState({ post: true });
   }
 

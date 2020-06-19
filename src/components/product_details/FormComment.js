@@ -14,8 +14,12 @@ class FormComment extends React.Component {
           color2={'#ffd700'}
         />
         <label htmlFor="comment">Deixe seu comentário:
-          <textarea type="text" value={comment}
-            onChange={onChange} data-testid="product-detail-evaluation" />
+          <textarea
+            type="text"
+            value={comment}
+            onChange={onChange}
+            data-testid="product-detail-evaluation"
+          />
         </label>
         <button type="button" onClick={onClick}>Adicionar Comentário</button>
       </form>
