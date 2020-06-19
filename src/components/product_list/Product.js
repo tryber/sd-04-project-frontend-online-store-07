@@ -5,16 +5,17 @@ import freeShipping from '../../media/shipp.png';
 
 class Product extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = { imagePath: freeShipping };
     this.FreeShipping = this.FreeShipping.bind(this);
   }
-  
+
   FreeShipping() {
     return (
       <img
         className="shippImage"
         data-testid="free-shipping"
-        src={freeShipping}
+        src={this.state.imagePath}
         alt="Free Shipping"
       />
     );
