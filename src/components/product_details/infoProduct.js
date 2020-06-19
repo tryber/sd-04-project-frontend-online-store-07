@@ -2,7 +2,6 @@ import React from 'react';
 import freeShipping from '../../media/shipp.png';
 import AddAndDecrease from './AddAndDecrease';
 import AddToCart from '../addToCartButton';
-import Image from '../image';
 
 function FreeShipping() {
   return (
@@ -25,8 +24,8 @@ class infoProduct extends React.Component {
   HandleAddDecrease(value) {
     const quant = this.state.quantity;
     const total = this.props.product.available_quantity;
-    if (value === 'dec' && quant > 0) this.setState({ quantity: (quant - 1)});
-    if (value === 'add' && quant < total) this.setState({ quantity: (quant + 1)});
+    if (value === 'dec' && quant > 0) this.setState({ quantity: (quant - 1) });
+    if (value === 'add' && quant < total) this.setState({ quantity: (quant + 1) });
   }
 
   render() {
@@ -46,11 +45,8 @@ class infoProduct extends React.Component {
           <div>
             <p>Informações Adicionais: </p>
             <ul>
-              {attributes.map((attribute) => (
-                <li key={attribute.id}>
-                  {attribute.name}: {attribute.value_name}
-                </li>
-              ))}
+              {attributes.map((attribute) => (<li key={attribute.id}>
+                  {attribute.name}: {attribute.value_name}</li>))}
             </ul>
           </div>
           <div>
