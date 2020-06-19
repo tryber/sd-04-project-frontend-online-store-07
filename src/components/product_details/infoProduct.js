@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import freeShipping from '../../media/shipp.png';
+import AddToCart from '../addToCartButton';
 
 function FreeShipping() {
   return (
@@ -39,7 +40,7 @@ class infoProduct extends React.Component {
             </ul>
           </div>
           <div className="buttomShop">
-            <Link to="/cart" data-testid="product-detail-add-to-cart">Ir para o Carrinho</Link>
+            <AddToCart item={this.props.product} testid="product-add-to-cart" />
           </div>
         </div>
       </div>

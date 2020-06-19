@@ -23,13 +23,16 @@ class ProductList extends Component {
     const query = this.state.searchValue;
     const categoryId = event.target.id;
     if (query && categoryId) {
-      api.getProductsFromCategoryAndQuery({ categoryId, query })
+      api
+        .getProductsFromCategoryAndQuery({ categoryId, query })
         .then((results) => this.setState({ products: results.results }));
     } else if (categoryId) {
-      api.getProductsFromCategoryAndQuery({ categoryId })
+      api
+        .getProductsFromCategoryAndQuery({ categoryId })
         .then((results) => this.setState({ products: results.results }));
     } else {
-      api.getProductsFromCategoryAndQuery({ query })
+      api
+        .getProductsFromCategoryAndQuery({ query })
         .then((results) => this.setState({ products: results.results }));
     }
     this.setState({ products: '', searchValue: '' });
@@ -46,7 +49,6 @@ class ProductList extends Component {
       </div>
     );
   }
-
 
   Categories() {
     return (
@@ -68,7 +70,7 @@ class ProductList extends Component {
           <div className="main">
             {this.Categories()}
             <Link to="/cart" data-testid="shopping-cart-button">
-              Comprar
+              Ir para o Carrinho
             </Link>
             <div data-testid="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
@@ -80,10 +82,15 @@ class ProductList extends Component {
     return (
       <div>
         {this.headerSearch()}
+        <Link to="/cart" data-testid="shopping-cart-button">
+          Ir para o Carrinho
+        </Link>
         <div className="main">
           {this.Categories()}
           <div className="products">
-            {products.map((elem) => <Product product={elem} />)}
+            {products.map((elem) => (
+              <Product product={elem} />
+            ))}
           </div>
         </div>
       </div>
