@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
+import Dropdown from '../components/product_list/Dropdown'
 import './ProductList.css';
 import * as api from '../services/api';
 
@@ -12,11 +13,12 @@ class ProductList extends Component {
     this.state = { products: '', searchValue: '' };
     this.OnChangeSearchBar = this.OnChangeSearchBar.bind(this);
     this.Requisition = this.Requisition.bind(this);
+    this.sortByPriceDsc = this.sortByPriceDsc.bind(this);
+    this.sortByPriceAsc = this.sortByPriceAsc.bind(this);
   }
 
   OnChangeSearchBar(event) {
     this.setState({ searchValue: event.target.value });
-    console.log(this.state.searchValue);
   }
 
   Requisition(event) {
@@ -58,8 +60,31 @@ class ProductList extends Component {
     );
   }
 
+  sortByPriceDsc() {
+    const { products } = this.state;
+    const sortedProductsAsc = products.sort((a, b) => {
+      let comparison = 0;
+      if (a.price > b.price) {
+        comparison = 1;
+      } else if (a.price < b.price) {
+        comparison = -1;
+      }
+      return comparison;
+    });
+    this.setState({ products: sortedProductsAsc });
+  }
+
+  sortByPriceAsc() {
+    const { products } = this.state;
+    const sortedProductsAsc = products.sort((a, b) => (a.price - b.price));
+    return this.setState({ products: sortedProductsAsc });
+  }
+
   render() {
     const { products } = this.state;
+    console.log("render");
+    console.log(products);
+
     if (products === '') {
       return (
         <div>
@@ -80,9 +105,13 @@ class ProductList extends Component {
       <div>
         {this.headerSearch()}
         <div className="main">
+          <Dropdown>
+            <option value="maior" name="maior" onClick={this.sortByPriceDsc}>Maior Preço</option>
+            <option value="menor" name="menor" onClick={this.sortByPriceAsc}>Menor Preço</option>
+          </Dropdown>
           {this.Categories()}
           <div className="products">
-            {products.map((elem) => <Product product={elem} />)}
+            {products.map((elem) => <Product key={elem.id} product={elem} />)}
           </div>
         </div>
       </div>
