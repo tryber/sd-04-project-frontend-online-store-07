@@ -13,8 +13,7 @@ class ProductList extends Component {
     this.state = { products: '', searchValue: '' };
     this.OnChangeSearchBar = this.OnChangeSearchBar.bind(this);
     this.Requisition = this.Requisition.bind(this);
-    this.sortByPriceDsc = this.sortByPriceDsc.bind(this);
-    this.sortByPriceAsc = this.sortByPriceAsc.bind(this);
+    this.handleChangeSort = this.handleChangeSort.bind(this);
   }
 
   OnChangeSearchBar(event) {
@@ -60,30 +59,22 @@ class ProductList extends Component {
     );
   }
 
-  sortByPriceDsc() {
+  handleChangeSort(event) {
+    const { value } = event.target;
     const { products } = this.state;
-    const sortedProductsAsc = products.sort((a, b) => {
-      let comparison = 0;
-      if (a.price > b.price) {
-        comparison = 1;
-      } else if (a.price < b.price) {
-        comparison = -1;
-      }
-      return comparison;
-    });
-    this.setState({ products: sortedProductsAsc });
-  }
 
-  sortByPriceAsc() {
-    const { products } = this.state;
-    const sortedProductsAsc = products.sort((a, b) => (a.price - b.price));
-    return this.setState({ products: sortedProductsAsc });
+    if (value === 'maior') {
+      const sortedProductsAsc = products.sort((a, b) => (b.price - a.price));
+      this.setState({ products: sortedProductsAsc });
+    }
+    if (value === 'menor') {
+      const sortedProductsDsc = products.sort((a, b) => (a.price - b.price));
+      this.setState({ products: sortedProductsDsc });
+    }
   }
 
   render() {
     const { products } = this.state;
-    console.log("render");
-    console.log(products);
 
     if (products === '') {
       return (
@@ -105,10 +96,7 @@ class ProductList extends Component {
       <div>
         {this.headerSearch()}
         <div className="main">
-          <Dropdown>
-            <option value="maior" name="maior" onClick={this.sortByPriceDsc}>Maior Preço</option>
-            <option value="menor" name="menor" onClick={this.sortByPriceAsc}>Menor Preço</option>
-          </Dropdown>
+          <Dropdown sort={this.handleChangeSort} />
           {this.Categories()}
           <div className="products">
             {products.map((elem) => <Product key={elem.id} product={elem} />)}
