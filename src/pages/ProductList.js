@@ -7,6 +7,13 @@ import Dropdown from '../components/product_list/Dropdown';
 import './ProductList.css';
 import * as api from '../services/api';
 
+function goToChart() {
+  return (
+    <Link to="/cart" data-testid="shopping-cart-button">
+      Ir para o Carrinho
+    </Link>
+  );
+}
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -24,15 +31,19 @@ class ProductList extends Component {
     const query = this.state.searchValue;
     const categoryId = event.target.id;
     if (query && categoryId) {
-      api.getProductsFromCategoryAndQuery({ categoryId, query })
+      api
+        .getProductsFromCategoryAndQuery({ categoryId, query })
         .then((results) => this.setState({ products: results.results }));
     } else if (categoryId) {
-      api.getProductsFromCategoryAndQuery({ categoryId })
+      api
+        .getProductsFromCategoryAndQuery({ categoryId })
         .then((results) => this.setState({ products: results.results }));
     } else {
-      api.getProductsFromCategoryAndQuery({ query })
+      api
+        .getProductsFromCategoryAndQuery({ query })
         .then((results) => this.setState({ products: results.results }));
     }
+    this.setState({ products: '', searchValue: '' });
   }
 
   headerSearch() {
@@ -46,7 +57,6 @@ class ProductList extends Component {
       </div>
     );
   }
-
 
   Categories() {
     return (
@@ -82,9 +92,7 @@ class ProductList extends Component {
           {this.headerSearch()}
           <div className="main">
             {this.Categories()}
-            <Link to="/cart" data-testid="shopping-cart-button">
-              Comprar
-            </Link>
+            {goToChart()}
             <div data-testid="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
             </div>
@@ -95,11 +103,15 @@ class ProductList extends Component {
     return (
       <div>
         {this.headerSearch()}
+        {goToChart()}
         <div className="main">
           <Dropdown sort={this.handleChangeSort} />
           {this.Categories()}
           <div className="products">
-            {products.map((elem) => <Product key={elem.id} product={elem} />)}
+            {products.map((elem) => (
+              <Product key={elem.id} product={elem} />
+            ))}
+
           </div>
         </div>
       </div>
