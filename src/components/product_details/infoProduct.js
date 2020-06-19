@@ -1,17 +1,31 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import freeShipping from '../../media/shipp.png';
+
+function FreeShipping() {
+  return (
+    <img
+      className="shippImage"
+      data-testid="free-shipping"
+      src={freeShipping}
+      alt="Free Shipping"
+    />
+  );
+}
 
 class infoProduct extends React.Component {
   render() {
-    const { price, thumbnail, title, attributes } = this.props.product;
-    console.log(attributes);
+    const { price, thumbnail, title, attributes, shipping } = this.props.product;
     const availableQuantity = this.props.product.available_quantity;
     if (!this.props.product) return <h1>Loading...</h1>;
     return (
       <div className="container">
         <div className="product">
           <h3 data-testid="product-detail-name">{title}</h3>
-          <img src={thumbnail} alt={title} />
+          <div className="images">
+            <img src={thumbnail} alt={title} />
+            {(shipping.free_shipping) && FreeShipping() }
+          </div>
           <p>{`Preço: $${price}`}</p>
           <p>Quantidade Disponível: {availableQuantity}</p>
           <div>
