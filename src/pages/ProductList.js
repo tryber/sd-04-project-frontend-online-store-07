@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
-import Dropdown from '../components/product_list/Dropdown'
+import Dropdown from '../components/product_list/Dropdown';
 import './ProductList.css';
 import * as api from '../services/api';
 
