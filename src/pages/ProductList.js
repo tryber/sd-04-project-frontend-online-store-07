@@ -50,6 +50,14 @@ class ProductList extends Component {
     );
   }
 
+  goToChart() {
+    return (
+      <Link to="/cart" data-testid="shopping-cart-button">
+        Ir para o Carrinho
+      </Link>
+    );
+  }
+
   Categories() {
     return (
       <div>
@@ -69,9 +77,7 @@ class ProductList extends Component {
           {this.headerSearch()}
           <div className="main">
             {this.Categories()}
-            <Link to="/cart" data-testid="shopping-cart-button">
-              Ir para o Carrinho
-            </Link>
+            {this.goToChart()}
             <div data-testid="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
             </div>
@@ -82,9 +88,7 @@ class ProductList extends Component {
     return (
       <div>
         {this.headerSearch()}
-        <Link to="/cart" data-testid="shopping-cart-button">
-          Ir para o Carrinho
-        </Link>
+        {this.goToChart()}
         <div className="main">
           {this.Categories()}
           <div className="products">

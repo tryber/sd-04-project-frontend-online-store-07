@@ -8,16 +8,20 @@ class ShoppingCart extends React.Component {
   }
 
   componentDidMount() {
-    if (!localStorage.cartItems) localStorage.cartItems = JSON.stringify([]);
-    const cartItems = JSON.parse(localStorage.cartItems);
-    console.log(cartItems);
-    this.setState({ cartItems });
+    this.updateItem();
   }
 
   getQuantity(itemTitle) {
     const { cartItems } = this.state;
     const quantity = cartItems.filter(({ title }) => itemTitle === title).length;
     return quantity;
+  }
+
+  updateItem() {
+    if (!localStorage.cartItems) localStorage.cartItems = JSON.stringify([]);
+    const cartItems = JSON.parse(localStorage.cartItems);
+    console.log(cartItems);
+    this.setState({ cartItems });
   }
 
   renderItems() {
