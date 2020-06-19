@@ -4,6 +4,11 @@ import './Product.css';
 import freeShipping from '../../media/shipp.png';
 
 class Product extends React.Component {
+  constructor(props) {
+    super(props)
+    this.FreeShipping = this.FreeShipping.bind(this);
+  }
+  
   FreeShipping() {
     return (
       <img
