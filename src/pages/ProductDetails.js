@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
 import getItemForId from '../services/apiId';
+import './ProductDetails.css';
 
 class ProductDetails extends React.Component {
   constructor(props) {
