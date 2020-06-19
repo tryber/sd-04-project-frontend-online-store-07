@@ -20,7 +20,6 @@ class ShoppingCart extends React.Component {
   updateItem() {
     if (!localStorage.cartItems) localStorage.cartItems = JSON.stringify([]);
     const cartItems = JSON.parse(localStorage.cartItems);
-    console.log(cartItems);
     this.setState({ cartItems });
   }
 

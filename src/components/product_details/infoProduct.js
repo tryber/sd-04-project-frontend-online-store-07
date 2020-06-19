@@ -24,7 +24,7 @@ class infoProduct extends React.Component {
           <h3 data-testid="product-detail-name">{title}</h3>
           <div className="images">
             <img src={thumbnail} alt={title} />
-            {(shipping.free_shipping) && FreeShipping() }
+            {shipping.free_shipping && FreeShipping()}
           </div>
           <p>{`Preço: $${price}`}</p>
           <p>Quantidade Disponível: {availableQuantity}</p>
@@ -39,7 +39,7 @@ class infoProduct extends React.Component {
             </ul>
           </div>
           <div className="buttomShop">
-            <AddToCart item={this.props.product} testid="product-add-to-cart" />
+            <AddToCart item={this.props.product} testid="product-detail-add-to-cart" />
           </div>
         </div>
       </div>
