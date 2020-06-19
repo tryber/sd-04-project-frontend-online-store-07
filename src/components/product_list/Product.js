@@ -3,13 +3,22 @@ import { Link } from 'react-router-dom';
 import './Product.css';
 
 class Product extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { freeShippingImage: '../../media/freeShipping.jpeg' }
+  }
+
   render() {
-    const { thumbnail, title, price, id } = this.props.product;
+    const { thumbnail, title, price, id, shipping } = this.props.product;
+    const shippingPath = this.props.freeShippingImage;
     return (
       <div className="container" data-testid="product">
         <div className="product">
           <h3>{title}</h3>
-          <img src={thumbnail} alt={title} />
+          <div>
+            <img src={thumbnail} alt={title} />
+            {(shipping.free_shipping) && <img data-testid="free-shipping" href={shippingPath} alt="Free Shipping" /> }
+          </div>
           <p>{`Preço: ${price}`}</p>
           <div className="button-container">
             <div className="buttomShop">
