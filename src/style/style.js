@@ -13,8 +13,7 @@ export const ContainerPage = styled.div`
   font-size: 100%;
 
   /* ${props =>
-    props.nav &&
-    css`
+    props.nav && css`
       background: palevioletred;
       color: white;
     `} */
@@ -43,22 +42,19 @@ export const NavBar = styled.nav`
   }
 
   h1 {
-    color: #582c4d;
+    color: #3C096C;
     font-size: 35px;
   }
 
   ${props =>
-    props.div &&
-    css`
+    props.div && css`
       display: flex;
       flex-direction: column;
     `}
-  ${props =>
-    props.img &&
-    css`
-      align-items: flex-start;
-      display: flex;
-    `}
+  ${props => props.cart && css`
+      width: 10px;
+      height: 10px;
+  `}
 `;
 
 export const Container = styled.div`
@@ -78,4 +74,4 @@ ${props => props.search && css`
       padding: 0.5em 1em;
       cursor: pointer;
   `}
-`
+`;

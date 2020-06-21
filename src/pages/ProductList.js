@@ -6,13 +6,14 @@ import Search from '../components/product_list/Search';
 import Dropdown from '../components/product_list/Dropdown';
 import * as api from '../services/api';
 import logo from '../media/Logo.png';
-import '../style/Body.css';
-import { ContainerPage, Container, Header, NavBar } from '../style/style';
+import cart from '../media/Cart.png';
+import '../style/style.css';
+import { ContainerPage, Header, NavBar } from '../style/style';
 
 function goToChart() {
   return (
     <Link to="/cart" data-testid="shopping-cart-button">
-      Ir para o Carrinho
+      <i class="fas fa-shopping-cart fa-2x"></i>
     </Link>
   );
 }
@@ -99,11 +100,13 @@ class ProductList extends Component {
             <NavBar>
               {this.headerSearch()}
             </NavBar>
+            <NavBar cart>
+              {goToChart()}
+            </NavBar>
           </Header>
           {/* <Container>
             <div className='main'>
               {this.Categories()}
-              {goToChart()}
               <div data-testid='home-initial-message'>
                 Digite algum termo de pesquisa ou escolha uma categoria.
               </div>
@@ -123,7 +126,6 @@ class ProductList extends Component {
             {products.map((elem) => (
               <Product key={elem.id} product={elem} />
             ))}
-
           </div>
         </div>
       </div>

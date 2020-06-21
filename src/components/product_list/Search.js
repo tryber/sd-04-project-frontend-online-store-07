@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInput from '../_general/FormInput';
-import '../../style/Body.css';
+import '../../style/style.css';
 import { Button, Container } from '../../style/style.js'
 
 class Search extends React.Component {
