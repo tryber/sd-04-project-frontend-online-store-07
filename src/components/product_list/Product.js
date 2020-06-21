@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import freeShipping from '../../media/shipp.png';
 import AddToCart from '../_general/addToCartButton';
+import '../../style/style.css';
+import { Button } from '../../style/style';
 
 function FreeShipping() {
   return (
@@ -18,21 +20,21 @@ class Product extends React.Component {
   render() {
     const { thumbnail, title, price, id, shipping } = this.props.product;
     return (
-      <div className="container" data-testid="product">
-        <div className="product">
+      <div data-testid="product">
+        <div>
           <h3>{title}</h3>
-          <div className="images">
-            <img src={thumbnail} className="image-detail" alt={title} />
+          <div>
+            <img src={thumbnail} alt={title} />
             {(shipping.free_shipping) && FreeShipping() }
           </div>
           <p>{`Preço: ${price}`}</p>
-          <div className="button-container">
-            <div className="buttomShop">
+          <div>
+            <div>
               <Link to={`/product/${id}`} data-testid="product-detail-link">
-                Ver detalhes
+              <Button details type="button">Ver detalhes</Button>
               </Link>
             </div>
-            <div className="buttomShop">
+            <div>
               <AddToCart testid="product-add-to-cart" item={this.props.product} />
             </div>
           </div>

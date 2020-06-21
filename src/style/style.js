@@ -16,8 +16,8 @@ export const NavBar = styled.nav`
   align-items: center;
 
   img {
-    width: 120px;
-    height: 80px;
+    width: 140px;
+    height: 95px;
   }
 
   h1 {
@@ -29,7 +29,10 @@ export const NavBar = styled.nav`
   ${props => props.cart && css`
       width: 5%;
   `}
-`;
+  ${props => props.ordem && css`
+    width: 10%;
+  `}
+`; 
 
 export const Container = styled.div`
   top: 0;
@@ -74,16 +77,27 @@ export const Aside = styled.aside`
 `;
 
 export const Button = styled.button`
-
-${props => props.search && css`
+  cursor: pointer;
+  margin: 0.5em 0.25em;
+  padding: 0.5em 1em;
+  
+  ${props => props.details && css`
+    background-color: #3C096C;
+    color: white;
+    border: 2px solid #3c096c;
+  `};
+  
+  ${props => props.search && css`
+      color: #5a189a;
       background: transparent;
       border-radius: 3px;
       border: 2px solid #3c096c;
-      color: #5a189a;
-      margin: 0.5em 0.25em;
-      padding: 0.5em 1em;
-      cursor: pointer;
-  `}
+  `};
+
+  ${props => props.cart && css`
+    background-color: transparent;
+    border: none;
+  `};
 `;
 
 export const Ordenação = styled.div`
@@ -108,3 +122,6 @@ export const Ordenação = styled.div`
   }
 `;
 
+export const Card = styled.div`
+  
+`;

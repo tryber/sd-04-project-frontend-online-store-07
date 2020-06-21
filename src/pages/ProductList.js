@@ -51,7 +51,7 @@ class ProductList extends Component {
 
   headerSearch() {
     return (
-      <div className="search">
+      <div>
         <Search
           value={this.state.searchValue}
           onChange={this.OnChangeSearchBar}
@@ -101,6 +101,7 @@ class ProductList extends Component {
               <NavBar>
                 {this.headerSearch()}
               </NavBar>
+              <NavBar ordem />
               <NavBar cart>
                 {goToChart()}
               </NavBar>
