@@ -118,19 +118,35 @@ class ProductList extends Component {
       );
     }
     return (
-      <div>
-        {this.headerSearch()}
-        {goToChart()}
-        <div className="main">
-          <Dropdown sort={this.handleChangeSort} />
-          {this.Categories()}
-          <div className="products">
+      <>
+        <Container>
+          <Header>
+            <NavBar>
+              <img src={logo} alt="logo" />
+              <h1>JAM & Peanut Butter</h1>
+            </NavBar>
+            <NavBar>
+              {this.headerSearch()}
+            </NavBar>
+            <NavBar>
+              <Dropdown sort={this.handleChangeSort} />
+            </NavBar>
+            <NavBar cart>
+              {goToChart()}
+            </NavBar>
+          </Header>
+        </Container>
+        <Section>
+          <Main>
+            {this.Categories()}
+          </Main>
+          <Aside>
             {products.map((elem) => (
               <Product key={elem.id} product={elem} />
             ))}
-          </div>
-        </div>
-      </div>
+          </Aside>
+        </Section>
+      </>
     );
   }
 }
