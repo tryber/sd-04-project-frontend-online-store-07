@@ -8,12 +8,12 @@ import * as api from '../services/api';
 import logo from '../media/Logo.png';
 import cart from '../media/Cart.png';
 import '../style/style.css';
-import { ContainerPage, Header, NavBar } from '../style/style';
+import { Container, Main, Aside, Section, Header, NavBar } from '../style/style';
 
 function goToChart() {
   return (
     <Link to="/cart" data-testid="shopping-cart-button">
-      <i class="fas fa-shopping-cart fa-2x"></i>
+      <i className="fas fa-shopping-cart fa-2x"></i>
     </Link>
   );
 }
@@ -65,7 +65,7 @@ class ProductList extends Component {
     return (
       <div>
         <div className="categories">
-          <p>Categorias:</p>
+          <h3>Categorias:</h3>
           <Categories onChange={this.Requisition} />
         </div>
       </div>
@@ -91,28 +91,30 @@ class ProductList extends Component {
 
     if (products === '') {
       return (
-        <ContainerPage>
-          <Header>
-            <NavBar>
-              <img src={logo} alt="logo"/>
-              <h1>JAM & Peanut Butter</h1>
-            </NavBar>
-            <NavBar>
-              {this.headerSearch()}
-            </NavBar>
-            <NavBar cart>
-              {goToChart()}
-            </NavBar>
-          </Header>
-          {/* <Container>
-            <div className='main'>
+        <>
+          <Container>
+            <Header>
+              <NavBar>
+                <img src={logo} alt="logo" />
+                <h1>JAM & Peanut Butter</h1>
+              </NavBar>
+              <NavBar>
+                {this.headerSearch()}
+              </NavBar>
+              <NavBar cart>
+                {goToChart()}
+              </NavBar>
+            </Header>
+          </Container>
+          <Section>
+            <Main>
               {this.Categories()}
-              <div data-testid='home-initial-message'>
-                Digite algum termo de pesquisa ou escolha uma categoria.
-              </div>
-            </div>
-          </Container> */}
-        </ContainerPage>
+            </Main>
+            <Aside data-testid='home-initial-message'>
+              <h3>Digite algum termo de pesquisa ou escolha uma categoria.</h3>
+            </Aside>
+          </Section>
+        </>
       );
     }
     return (

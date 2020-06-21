@@ -26,7 +26,7 @@ class Search extends React.Component {
           data-testid="query-button"
           onClick={onClick}
           >
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </Button>
         </div>
       </Container>

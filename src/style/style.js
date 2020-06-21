@@ -1,22 +1,42 @@
 import styled, { css } from 'styled-components';
 
-export const ContainerPage = styled.div`
+export const Container = styled.div`
   top: 0;
   width: 100%;
   display: flex;
-  /* justify-content: space-between;
-  align-items: center; */
   padding: 0;
   margin: 0;
   overflow: hidden;
   box-sizing: border-box;
   font-size: 100%;
+`;
 
-  /* ${props =>
-    props.nav && css`
-      background: palevioletred;
-      color: white;
-    `} */
+export const Section = styled.section`
+  display: flex;
+  
+`;
+
+export const Main = styled.article`
+  width: 20%;
+  margin: 0.25em 2em;
+  padding: 0.5em;
+
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #fbab7e;
+    padding: 0.25em;
+    border-radius: 5px;
+  }
+`;
+
+export const Aside = styled.aside`
+  width: 70%;
+
+  h3 {
+    text-align: center;
+    margin: 2em;
+  }
 `;
 
 export const Header = styled.header`
@@ -55,12 +75,6 @@ export const NavBar = styled.nav`
       width: 10px;
       height: 10px;
   `}
-`;
-
-export const Container = styled.div`
-  display: flex;
-  width: 300px;
-  justify-content: space-between;
 `;
 
 export const Button = styled.button`
