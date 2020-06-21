@@ -5,6 +5,9 @@ import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
 import Dropdown from '../components/product_list/Dropdown';
 import * as api from '../services/api';
+import logo from '../media/Logo.png';
+import '../style/Body.css';
+import { ContainerPage, Container, Header, NavBar } from '../style/style';
 
 function goToChart() {
   return (
@@ -87,16 +90,26 @@ class ProductList extends Component {
 
     if (products === '') {
       return (
-        <div>
-          {this.headerSearch()}
-          <div className="main">
-            {this.Categories()}
-            {goToChart()}
-            <div data-testid="home-initial-message">
-              Digite algum termo de pesquisa ou escolha uma categoria.
+        <ContainerPage>
+          <Header>
+            <NavBar>
+              <img src={logo} alt="logo"/>
+              <h1>JAM & Peanut Butter</h1>
+            </NavBar>
+            <NavBar>
+              {this.headerSearch()}
+            </NavBar>
+          </Header>
+          {/* <Container>
+            <div className='main'>
+              {this.Categories()}
+              {goToChart()}
+              <div data-testid='home-initial-message'>
+                Digite algum termo de pesquisa ou escolha uma categoria.
+              </div>
             </div>
-          </div>
-        </div>
+          </Container> */}
+        </ContainerPage>
       );
     }
     return (

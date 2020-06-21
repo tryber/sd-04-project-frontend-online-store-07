@@ -1,5 +1,6 @@
 import React from 'react';
 import UserInfo from '../components/checkout/UserInfo';
+import FormInput from '../components/_general/FormInput';
 
 class Checkout extends React.Component {
   render() {
@@ -11,9 +12,24 @@ class Checkout extends React.Component {
         <UserInfo />
         <div>
           <h3>Forma de pagamento</h3>
-          <button type="radio">Cartão de Credito</button>
-          <button type="radio">Cartão de Debito</button>
-          <button type="radio">Boleto</button>
+          <FormInput
+            label="Cartão de Credito"
+            value="Cartão de Credito"
+            type="radio"
+            name="pagamento"
+          />
+          <FormInput
+            label="Cartão de Debito"
+            value="Cartão de Debito"
+            type="radio"
+            name="pagamento"
+          />
+          <FormInput
+            label="Boleto"
+            value="Boleto"
+            type="radio"
+            name="pagamento"
+          />
         </div>
         <div>
           <buttom type="button">

@@ -1,29 +1,35 @@
 import React from 'react';
 import FormInput from '../_general/FormInput';
+import '../../style/Body.css';
+import { Button, Container } from '../../style/style.js'
 
 class Search extends React.Component {
   render() {
     const { value, onChange, onClick } = this.props;
     return (
-      <div>
-        <FormInput
+      <Container>
+        <div>
+          <FormInput
           label=""
           name="searchBar"
           test="query-input"
           value={value}
-          holder="pesquisar"
+          holder="Pesquisar"
           onChange={onChange}
           className="search-input"
         />
-        <button
+        </div>
+        <div>
+          <Button
+          search
           type="button"
           data-testid="query-button"
-          className="button-input"
           onClick={onClick}
-        >
-          Buscar
-        </button>
-      </div>
+          >
+          <i class="fas fa-search"></i>
+        </Button>
+        </div>
+      </Container>
     );
   }
 }
