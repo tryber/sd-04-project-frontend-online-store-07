@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Product.css';
 import freeShipping from '../../media/shipp.png';
-import AddToCart from '../../components/addToCartButton';
+import AddToCart from '../_general/addToCartButton';
 
 function FreeShipping() {
   return (

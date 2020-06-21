@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from '../FormInput';
+import FormInput from '../_general/FormInput';
 
 class UserInfo extends React.Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import FormComment from './FormComment';
 function post(rating, comment) {
   return (
     <div className="comment">
-      <span>Pontuação {rating}</span>
+      <span>{`Pontuação ${rating}`}</span>
       <p>{comment}</p>
     </div>
   );

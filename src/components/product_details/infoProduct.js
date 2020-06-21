@@ -1,7 +1,7 @@
 import React from 'react';
 import freeShipping from '../../media/shipp.png';
 import AddAndDecrease from './AddAndDecrease';
-import AddToCart from '../addToCartButton';
+import AddToCart from '../_general/addToCartButton';
 
 function FreeShipping() {
   return (
