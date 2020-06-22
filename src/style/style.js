@@ -82,6 +82,11 @@ export const Form = styled.form`
   border: 2px solid #fbab7e;
   margin: 2em;
   padding: 2em;
+
+  label {
+    color: #3c096c;
+    font-weight: 600;
+  }
 `;
 
 export const Main = styled.article`

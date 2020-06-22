@@ -26,7 +26,7 @@ class UserInfo extends React.Component {
     return (
       <Section>
         <FormInput
-          label="Nome Completo"
+          label="Nome Completo:"
           name="fullName"
           value={fullName}
           test="checkout-fullname"
@@ -34,7 +34,7 @@ class UserInfo extends React.Component {
           className="name-input inputCheckout"
         />
         <FormInput
-          label="Email"
+          label="Email:"
           type="email"
           name="email"
           value={email}
@@ -52,7 +52,7 @@ class UserInfo extends React.Component {
     return (
       <Section form>
         <FormInput
-          label="CPF"
+          label="CPF:"
           caracters={11}
           name="cpf"
           value={cpf}
@@ -61,7 +61,7 @@ class UserInfo extends React.Component {
           className="cpf-input inputCheckout"
         />
         <FormInput
-          label="Telefone"
+          label="Telefone:"
           caracters={14}
           name="phone"
           value={phone}
@@ -70,7 +70,7 @@ class UserInfo extends React.Component {
           className="telefone-input inputCheckout"
         />
         <FormInput
-          label="CEP"
+          label="CEP:"
           caracters={8}
           name="cep"
           value={cep}
@@ -87,7 +87,7 @@ class UserInfo extends React.Component {
     return (
       <Section form>
         <FormInput
-          label="Endereço"
+          label="Endereço:"
           name="address"
           value={address}
           test="checkout-address"
