@@ -85,38 +85,38 @@ class ProductList extends Component {
     }
   }
 
-  render() {
-    const { products } = this.state;
+  renderWithoutProduct() {
+    return (
+      <>
+        <Container>
+          <Header>
+            <NavBar>
+              <img src={logo} alt="logo" />
+              <h1>JAM & Peanut Butter</h1>
+            </NavBar>
+            <NavBar>
+              {this.headerSearch()}
+            </NavBar>
+            <NavBar ordem />
+            <NavBar cart>
+              {goToChart()}
+            </NavBar>
+          </Header>
+        </Container>
+        <Section>
+          <Main>
+            {this.Categories()}
+          </Main>
+          <Aside data-testid='home-initial-message'>
+            <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
+          </Aside>
+        </Section>
+      </>
+    );
+  }
 
-    if (products === '') {
-      return (
-        <>
-          <Container>
-            <Header>
-              <NavBar>
-                <img src={logo} alt="logo" />
-                <h1>JAM & Peanut Butter</h1>
-              </NavBar>
-              <NavBar>
-                {this.headerSearch()}
-              </NavBar>
-              <NavBar ordem />
-              <NavBar cart>
-                {goToChart()}
-              </NavBar>
-            </Header>
-          </Container>
-          <Section>
-            <Main>
-              {this.Categories()}
-            </Main>
-            <Aside data-testid='home-initial-message'>
-              <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
-            </Aside>
-          </Section>
-        </>
-      );
-    }
+  renderWithProduct() {
+    const { products } = this.state;
     return (
       <>
         <Container>
@@ -147,6 +147,18 @@ class ProductList extends Component {
           </Aside>
         </Section>
       </>
+    );
+  }
+
+  render() {
+    const { products } = this.state;
+    if (products === '') {
+      return (
+        <>{this.renderWithoutProduct()}</>
+      );
+    }
+    return (
+      <>{this.renderWithProduct()}</>
     );
   }
 }
