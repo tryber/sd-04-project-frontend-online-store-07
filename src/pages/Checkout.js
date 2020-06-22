@@ -39,7 +39,7 @@ class Checkout extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
         <Container>
           <Header>
             <Brand />
@@ -53,7 +53,7 @@ class Checkout extends React.Component {
             <Button type="button">Finalizar Compra</Button>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

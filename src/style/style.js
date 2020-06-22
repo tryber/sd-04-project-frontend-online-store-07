@@ -26,17 +26,17 @@ export const NavBar = styled.nav`
     font-size: 2.3vw;
   }
 
-  ${props => props.space && css`
+  ${(props) => props.space && css`
     width: 55%;
   `}
 
-  ${props => props.cart && css`
+  ${(props) => props.cart && css`
       width: 5%;
   `}
-  ${props => props.ordem && css`
+  ${(props) => props.ordem && css`
     width: 10%;
   `}
-`; 
+`;
 
 export const Container = styled.div`
   top: 0;

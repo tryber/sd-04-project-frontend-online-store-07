@@ -12,7 +12,7 @@ const AddToCart = (props) => {
   };
   return (
     <Button cart data-testid={testid} type="button" onClick={() => addToCart(item)}>
-      <i class="fas fa-cart-arrow-down fa-2x" style={{color:"#3c096c"}}></i>
+      <i className="fas fa-cart-arrow-down fa-2x" style={{ color: '#3c096c' }} />
     </Button>
   );
 };

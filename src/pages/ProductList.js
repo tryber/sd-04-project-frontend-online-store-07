@@ -87,7 +87,7 @@ class ProductList extends Component {
 
   renderWithoutProduct() {
     return (
-      <>
+      <div>
         <Container>
           <Header>
             <Brand />
@@ -108,14 +108,14 @@ class ProductList extends Component {
             <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
           </Aside>
         </Section>
-      </>
+      </div>
     );
   }
 
   renderWithProduct() {
     const { products } = this.state;
     return (
-      <>
+      <div>
         <Container>
           <Header>
             <Brand />
@@ -140,7 +140,7 @@ class ProductList extends Component {
             ))}
           </Aside>
         </Section>
-      </>
+      </div>
     );
   }
 
