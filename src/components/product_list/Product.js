@@ -21,20 +21,20 @@ class Product extends React.Component {
     const { thumbnail, title, price, id, shipping } = this.props.product;
     return (
       <Card data-testid="product">
-          <h3>{title}</h3>
-          <Section image>
-            <img src={thumbnail} alt={title} />
-            {(shipping.free_shipping) && FreeShipping() }
-          </Section>
-          <p>{`Preço: R$${price}`}</p>
-          <div>
-            <Section buttons>
-              <Link to={`/product/${id}`} data-testid="product-detail-link">
+        <h3>{title}</h3>
+        <Section image>
+          <img src={thumbnail} alt={title} />
+          {(shipping.free_shipping) && FreeShipping() }
+        </Section>
+        <p>{`Preço: R$${price}`}</p>
+        <div>
+          <Section buttons>
+            <Link to={`/product/${id}`} data-testid="product-detail-link">
               <Button details type="button">Ver detalhes</Button>
-              </Link>
-              <AddToCart testid="product-add-to-cart" item={this.props.product} />
-            </Section>
-          </div>
+            </Link>
+            <AddToCart testid="product-add-to-cart" item={this.props.product} />
+          </Section>
+        </div>
       </Card>
     );
   }

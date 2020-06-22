@@ -1,15 +1,15 @@
 .search-input {
   background: transparent;
-  margin: 0.5em 0.25em;
-  padding: 0.5em 1em;
-  width: 250px;
   border: 2px solid #3c096c;
   border-radius: 3px;
   box-sizing: border-box;
+  margin: 0.5em 0.25em;
+  padding: 0.5em 1em;
+  width: 250px;
 }
 
 .shippImage {
-  background-color: #9B00F5;
-  width: 60px;
+  background-color: #9b00f5;
   height: 60px;
+  width: 60px;
 }

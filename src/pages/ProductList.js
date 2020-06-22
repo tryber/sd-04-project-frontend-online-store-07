@@ -5,14 +5,14 @@ import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
 import Dropdown from '../components/product_list/Dropdown';
 import * as api from '../services/api';
-import logo from '../media/Logo.png';
 import '../style/style.css';
 import { Container, Main, Aside, Section, Header, NavBar } from '../style/style';
+import Brand from '../components/_general/Brand';
 
 function goToChart() {
   return (
     <Link to="/cart" data-testid="shopping-cart-button">
-      <i className="fas fa-shopping-cart fa-2x"></i>
+      <i className="fas fa-shopping-cart fa-2x" />
     </Link>
   );
 }
@@ -90,10 +90,7 @@ class ProductList extends Component {
       <>
         <Container>
           <Header>
-            <NavBar>
-              <img src={logo} alt="logo" />
-              <h1>JAM & Peanut Butter</h1>
-            </NavBar>
+            <Brand />
             <NavBar>
               {this.headerSearch()}
             </NavBar>
@@ -121,10 +118,7 @@ class ProductList extends Component {
       <>
         <Container>
           <Header>
-            <NavBar>
-              <img src={logo} alt="logo" />
-              <h1>JAM & Peanut Butter</h1>
-            </NavBar>
+            <Brand />
             <NavBar>
               {this.headerSearch()}
             </NavBar>

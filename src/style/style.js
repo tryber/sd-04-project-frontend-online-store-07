@@ -59,7 +59,7 @@ export const Section = styled.section`
   `};
 
   ${(props) => props.buttons && css`
-  align-items: center;
+    align-items: center;
     justify-content: center;
     margin-bottom: 5px;
   `};
@@ -138,7 +138,7 @@ export const Button = styled.button`
   `};
 `;
 
-export const Ordenação = styled.div`
+export const Sort = styled.div`
   select {
     padding: 0.5em 0.5em;
     color: #10002B;
