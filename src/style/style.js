@@ -47,6 +47,18 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   display: flex;
+  
+  ${props => props.image && css`
+  align-items: center;
+    min-height: 95px;
+    justify-content: space-around;
+  `};
+
+  ${props => props.buttons && css`
+  align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  `};
 `;
 
 export const Main = styled.article`
@@ -68,12 +80,34 @@ export const Main = styled.article`
 
 export const Aside = styled.aside`
   width: 70%;
+  color: #3C096C;
+  text-align: center;
+
+  ${props => props.card && css`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2em;
+  `};
 
   h3 {
-    color: #3C096C;
-    text-align: center;
-    margin: 2em;
+    font-size: 1.3vw;
+    margin: 0.75em;
+    min-height: 60px;
   }
+
+  h4 {
+    margin: 2em;
+    font-size: 1.5vw;
+  }
+`;
+
+export const Card = styled.div`
+  border: 2px solid #3c096c;
+  max-width: 30%;
+  max-height: 10%;
+  margin: 0.5em;
+  padding: 0.3em;
 `;
 
 export const Button = styled.button`
@@ -122,6 +156,3 @@ export const Ordenação = styled.div`
   }
 `;
 
-export const Card = styled.div`
-  
-`;

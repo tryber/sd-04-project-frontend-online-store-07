@@ -6,7 +6,6 @@ import Search from '../components/product_list/Search';
 import Dropdown from '../components/product_list/Dropdown';
 import * as api from '../services/api';
 import logo from '../media/Logo.png';
-import cart from '../media/Cart.png';
 import '../style/style.css';
 import { Container, Main, Aside, Section, Header, NavBar } from '../style/style';
 
@@ -112,7 +111,7 @@ class ProductList extends Component {
               {this.Categories()}
             </Main>
             <Aside data-testid='home-initial-message'>
-              <h3>Digite algum termo de pesquisa ou escolha uma categoria.</h3>
+              <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
             </Aside>
           </Section>
         </>
@@ -141,7 +140,7 @@ class ProductList extends Component {
           <Main>
             {this.Categories()}
           </Main>
-          <Aside>
+          <Aside card>
             {products.map((elem) => (
               <Product key={elem.id} product={elem} />
             ))}
