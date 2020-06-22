@@ -26,6 +26,10 @@ export const NavBar = styled.nav`
     font-size: 2.3vw;
   }
 
+  ${props => props.space && css`
+    width: 55%;
+  `}
+
   ${props => props.cart && css`
       width: 5%;
   `}
