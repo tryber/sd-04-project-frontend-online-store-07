@@ -2,13 +2,13 @@ import React from 'react';
 import UserInfo from '../components/checkout/UserInfo';
 import FormInput from '../components/_general/FormInput';
 import Brand from '../components/_general/Brand';
-import { Container, Header, NavBar, Button } from '../style/style';
+import { Container, Aside, Header, Article, Section, NavBar, Button } from '../style/style';
 
 class Checkout extends React.Component {
   static pay() {
     return (
-      <div>
-        <h3>Forma de pagamento</h3>
+      <Article>
+        <h3>Formas de pagamento:</h3>
         <FormInput
           label={<i style={{ color: '#240046' }} className="fab fa-cc-visa fa-4x" />}
           value="Cartão Visa"
@@ -33,7 +33,7 @@ class Checkout extends React.Component {
           type="radio"
           name="pagamento"
         />
-      </div>
+      </Article>
     );
   }
 
@@ -46,13 +46,15 @@ class Checkout extends React.Component {
             <NavBar space />
           </Header>
         </Container>
-        <div>
-          <UserInfo />
+        <Section checkoutPage>
+          <Section form>
+            <UserInfo />
+          </Section>
           {Checkout.pay()}
-          <div>
-            <Button type="button">Finalizar Compra</Button>
-          </div>
-        </div>
+          <Button checkout type="button">
+            Finalizar Compra
+          </Button>
+        </Section>
       </div>
     );
   }

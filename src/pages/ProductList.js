@@ -147,13 +147,9 @@ class ProductList extends Component {
   render() {
     const { products } = this.state;
     if (products === '') {
-      return (
-        <>{this.renderWithoutProduct()}</>
-      );
+      return this.renderWithoutProduct();
     }
-    return (
-      <>{this.renderWithProduct()}</>
-    );
+    return this.renderWithProduct();
   }
 }
 

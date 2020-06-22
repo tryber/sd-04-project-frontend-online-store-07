@@ -53,7 +53,7 @@ export const Section = styled.section`
   display: flex;
   
   ${(props) => props.image && css`
-  align-items: center;
+    align-items: center;
     min-height: 95px;
     justify-content: space-around;
   `};
@@ -63,12 +63,32 @@ export const Section = styled.section`
     justify-content: center;
     margin-bottom: 5px;
   `};
+
+  ${(props) => props.pay && css`
+    align-items: center;
+  `}
+
+  ${(props) => props.checkoutPage && css`
+    flex-direction: column;
+    align-items: center;
+  `}
+
+  ${(props) => props.form && css`
+    justify-content: space-between;
+  `}
+`;
+
+export const Form = styled.form`
+  border: 2px solid #fbab7e;
+  margin: 2em;
+  padding: 2em;
 `;
 
 export const Main = styled.article`
   width: 20%;
   margin: 0.25em 2em;
   padding: 0.5em;
+  display: flex;
 
   h3 {
     /* color: #E0AAFF; */
@@ -77,9 +97,19 @@ export const Main = styled.article`
     text-transform: uppercase;
     /* background-color: #3C096C; */
     background-color: #fbab7e;
-    padding: 0.25em;
+    padding: 0.5em;
+    margin: 0.40em;
     border-radius: 5px;
   }
+`;
+
+export const Article = styled.article`
+  color: #240046;
+  width: 50%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #fbab7e;
 `;
 
 export const Aside = styled.aside`
@@ -123,6 +153,7 @@ export const Button = styled.button`
     background-color: #3C096C;
     color: white;
     border: 2px solid #3c096c;
+    border-radius: 3px;
   `};
   
   ${(props) => props.search && css`
@@ -135,6 +166,15 @@ export const Button = styled.button`
   ${(props) => props.cart && css`
     background-color: transparent;
     border: none;
+  `};
+
+  ${(props) => props.checkout && css`
+    background-color: #3C096C;
+    width: 10em;
+    height: 4em;
+    color: white;
+    border: 2px solid #3c096c;
+    border-radius: 3px;
   `};
 `;
 

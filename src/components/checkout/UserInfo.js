@@ -1,5 +1,7 @@
 import React from 'react';
 import FormInput from '../_general/FormInput';
+import { Section, Form } from '../../style/style';
+import '../../style/style.css';
 
 class UserInfo extends React.Component {
   constructor(props) {
@@ -12,7 +14,6 @@ class UserInfo extends React.Component {
       cep: '',
       address: '',
     };
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -20,49 +21,17 @@ class UserInfo extends React.Component {
     this.setState({ [event.nativeEvent.target.name]: event.nativeEvent.target.value });
   }
 
-  renderNumbers() {
-    const { cpf, phone, cep } = this.state;
-
+  renderSection1() {
+    const { fullName, email } = this.state;
     return (
-      <form>
-        <FormInput
-          label="CPF"
-          caracters={11}
-          name="cpf"
-          value={cpf}
-          test="checkout-cpf"
-          onChange={this.handleChange}
-        />
-        <FormInput
-          label="Telefone"
-          caracters={14}
-          name="phone"
-          value={phone}
-          test="checkout-phone"
-          onChange={this.handleChange}
-        />
-        <FormInput
-          label="CEP"
-          caracters={8}
-          name="cep"
-          value={cep}
-          test="checkout-cep"
-          onChange={this.handleChange}
-        />
-      </form>
-    );
-  }
-
-  renderText() {
-    const { fullName, email, address } = this.state;
-    return (
-      <div>
+      <Section>
         <FormInput
           label="Nome Completo"
           name="fullName"
           value={fullName}
           test="checkout-fullname"
           onChange={this.handleChange}
+          className="name-input inputCheckout"
         />
         <FormInput
           label="Email"
@@ -71,24 +40,71 @@ class UserInfo extends React.Component {
           value={email}
           test="checkout-email"
           onChange={this.handleChange}
+          className="email-input inputCheckout"
         />
-        {this.renderNumbers()}
+      </Section>
+    );
+  }
+
+  renderSection2() {
+    const { cpf, phone, cep } = this.state;
+
+    return (
+      <Section form>
+        <FormInput
+          label="CPF"
+          caracters={11}
+          name="cpf"
+          value={cpf}
+          test="checkout-cpf"
+          onChange={this.handleChange}
+          className="cpf-input inputCheckout"
+        />
+        <FormInput
+          label="Telefone"
+          caracters={14}
+          name="phone"
+          value={phone}
+          test="checkout-phone"
+          onChange={this.handleChange}
+          className="telefone-input inputCheckout"
+        />
+        <FormInput
+          label="CEP"
+          caracters={8}
+          name="cep"
+          value={cep}
+          test="checkout-cep"
+          onChange={this.handleChange}
+          className="cep-input inputCheckout"
+        />
+      </Section>
+    );
+  }
+
+  renderSection3() {
+    const { address } = this.state;
+    return (
+      <Section form>
         <FormInput
           label="Endereço"
           name="address"
           value={address}
           test="checkout-address"
           onChange={this.handleChange}
+          className="address-input inputCheckout"
         />
-      </div>
+      </Section>
     );
   }
 
   render() {
     return (
-      <div>
-        {this.renderText()}
-      </div>
+      <Form>
+        {this.renderSection1()}
+        {this.renderSection2()}
+        {this.renderSection3()}
+      </Form>
     );
   }
 }
