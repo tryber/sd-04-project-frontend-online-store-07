@@ -52,13 +52,13 @@ export const Container = styled.div`
 export const Section = styled.section`
   display: flex;
   
-  ${props => props.image && css`
+  ${(props) => props.image && css`
   align-items: center;
     min-height: 95px;
     justify-content: space-around;
   `};
 
-  ${props => props.buttons && css`
+  ${(props) => props.buttons && css`
   align-items: center;
     justify-content: center;
     margin-bottom: 5px;
@@ -87,7 +87,7 @@ export const Aside = styled.aside`
   color: #3C096C;
   text-align: center;
 
-  ${props => props.card && css`
+  ${(props) => props.card && css`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -119,20 +119,20 @@ export const Button = styled.button`
   margin: 0.5em 0.25em;
   padding: 0.5em 1em;
   
-  ${props => props.details && css`
+  ${(props) => props.details && css`
     background-color: #3C096C;
     color: white;
     border: 2px solid #3c096c;
   `};
   
-  ${props => props.search && css`
+  ${(props) => props.search && css`
       color: #5a189a;
       background: transparent;
       border-radius: 3px;
       border: 2px solid #3c096c;
   `};
 
-  ${props => props.cart && css`
+  ${(props) => props.cart && css`
     background-color: transparent;
     border: none;
   `};
@@ -159,4 +159,3 @@ export const Ordenação = styled.div`
     background: #f7ce68;
   }
 `;
-

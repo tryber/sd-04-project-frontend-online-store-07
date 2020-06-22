@@ -107,7 +107,7 @@ class ProductList extends Component {
           <Main>
             {this.Categories()}
           </Main>
-          <Aside data-testid='home-initial-message'>
+          <Aside data-testid="home-initial-message">
             <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
           </Aside>
         </Section>
