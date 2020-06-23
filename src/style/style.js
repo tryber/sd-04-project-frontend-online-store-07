@@ -30,9 +30,14 @@ export const NavBar = styled.nav`
     width: 55%;
   `}
 
+  ${(props) => props.space2 && css`
+    width: 40%;
+  `}
+
   ${(props) => props.cart && css`
       width: 5%;
   `}
+  
   ${(props) => props.ordem && css`
     width: 10%;
   `}

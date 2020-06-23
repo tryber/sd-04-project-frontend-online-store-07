@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Brand from '../components/_general/Brand';
+import { Container, Header, NavBar } from '../style/style';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -46,12 +48,17 @@ class ShoppingCart extends React.Component {
 
   render() {
     return (
-      <div className="shopping-cart">
-        <br />
-        <i data-testeid="shopping-cart-button" />
-        <p>Carrinho de Compras</p>
-        {this.renderItems()}
-        <div>
+      <div>
+        <Container>
+          <Header>
+            <Brand />
+            <NavBar space />
+          </Header>
+        </Container>
+        <div className="shopping-cart">
+          <i data-testeid="shopping-cart-button" />
+          <p>Carrinho de Compras</p>
+          {this.renderItems()}
           <Link to="/checkout">
             <button type="button" data-testid="checkout-products">
               Concluir Compra

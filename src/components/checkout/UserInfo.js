@@ -48,7 +48,6 @@ class UserInfo extends React.Component {
 
   renderSection2() {
     const { cpf, phone, cep } = this.state;
-
     return (
       <Section form>
         <FormInput
@@ -62,7 +61,6 @@ class UserInfo extends React.Component {
         />
         <FormInput
           label="Telefone:"
-          caracters={14}
           name="phone"
           value={phone}
           test="checkout-phone"
