@@ -250,3 +250,17 @@ export const ImagemProduct = styled.img`
   width: 15em;
   height: 15em;
 `;
+
+export const CSSFooter = styled.footer`
+  display: absolute;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 1em;
+  padding: 1em;
+  font-size: 1vw;
+  font-weight: 700;
+  color: #3C096C;
+`;

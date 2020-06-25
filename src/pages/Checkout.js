@@ -2,6 +2,7 @@ import React from 'react';
 import UserInfo from '../components/checkout/UserInfo';
 import FormInput from '../components/_general/FormInput';
 import Brand from '../components/_general/Brand';
+import Footer from '../components/_general/Footer';
 import { Container, Header, Article, Section, NavBar, Button } from '../style/style';
 
 class Checkout extends React.Component {
@@ -55,6 +56,7 @@ class Checkout extends React.Component {
             Finalizar Compra
           </Button>
         </Section>
+        <Footer />
       </div>
     );
   }

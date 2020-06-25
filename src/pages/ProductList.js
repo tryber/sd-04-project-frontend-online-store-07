@@ -8,6 +8,7 @@ import * as api from '../services/api';
 import '../style/style.css';
 import { Container, Main, Aside, Section, Header, NavBar } from '../style/style';
 import Brand from '../components/_general/Brand';
+import Footer from '../components/_general/Footer';
 
 function goToChart() {
   return (
@@ -108,6 +109,7 @@ class ProductList extends Component {
             <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
           </Aside>
         </Section>
+        <Footer />
       </div>
     );
   }
@@ -140,6 +142,7 @@ class ProductList extends Component {
             ))}
           </Aside>
         </Section>
+        <Footer />
       </div>
     );
   }

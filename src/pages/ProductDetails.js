@@ -5,6 +5,7 @@ import InfoProduct from '../components/product_details/infoProduct';
 import Comment from '../components/product_details/Comment';
 import getItemForId from '../services/apiId';
 import Brand from '../components/_general/Brand';
+import Footer from '../components/_general/Footer';
 import { Container, Header, NavBar } from '../style/style';
 
 class ProductDetails extends React.Component {
@@ -22,19 +23,20 @@ class ProductDetails extends React.Component {
     const { product } = this.state;
     return (
       <div>
-        <Container>
-          <Header>
-            <Brand />
-            <NavBar space2/>
-            <NavBar cart>
-              <Link to="/cart" data-testid="shopping-cart-button">
-                <i className="fas fa-shopping-cart fa-2x" />
-              </Link>
-            </NavBar>
-          </Header>
-        </Container>
-        <InfoProduct product={product} />
-        <Comment />
+          <Container>
+            <Header>
+              <Brand />
+              <NavBar space2/>
+              <NavBar cart>
+                <Link to="/cart" data-testid="shopping-cart-button">
+                  <i className="fas fa-shopping-cart fa-2x" />
+                </Link>
+              </NavBar>
+            </Header>
+          </Container>
+          <InfoProduct product={product} />
+          <Comment />
+        <Footer />
       </div>
     );
   }
