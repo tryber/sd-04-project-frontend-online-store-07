@@ -48,7 +48,6 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   padding: 0;
-  margin: 0;
   overflow: hidden;
   box-sizing: border-box;
   font-size: 100%;
@@ -92,13 +91,31 @@ export const Form = styled.form`
     color: #3c096c;
     font-weight: 600;
   }
+
+  ${(props) => props.details && css`
+    margin: 1.25em 2em;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  `}
+
+  textarea {
+    width: 45em;
+    height: 10em;
+  }
+
+  div {
+    margin: 1em;
+  }
 `;
 
 export const Main = styled.article`
-  width: 20%;
-  margin: 0.25em 2em;
+  max-width: 50%;
+  min-width: 20%;
+  margin: 0.5em 2em;
   padding: 0.5em;
-  display: flex;
+  /* display: flex; */
 
   h3 {
     /* color: #E0AAFF; */
@@ -111,6 +128,10 @@ export const Main = styled.article`
     margin: 0.40em;
     border-radius: 5px;
   }
+
+  ul {
+
+  }
 `;
 
 export const Article = styled.article`
@@ -120,6 +141,16 @@ export const Article = styled.article`
   display: flex;
   justify-content: space-between;
   border: 2px solid #fbab7e;
+
+  ${(props) => props.product && css`
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5em;
+  `}
+
+  p {
+    font-weight: 600;
+  }
 `;
 
 export const Aside = styled.aside`
@@ -208,4 +239,9 @@ export const Sort = styled.div`
     color: #240046;
     background: #f7ce68;
   }
+`;
+
+export const ImagemProduct = styled.img`
+  width: 10em;
+  height: 10em;
 `;

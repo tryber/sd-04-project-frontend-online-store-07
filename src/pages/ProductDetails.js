@@ -5,7 +5,7 @@ import InfoProduct from '../components/product_details/infoProduct';
 import Comment from '../components/product_details/Comment';
 import getItemForId from '../services/apiId';
 import Brand from '../components/_general/Brand';
-import { Container, Header, NavBar } from '../style/style';
+import { Container, Header, NavBar, Article, Card } from '../style/style';
 
 class ProductDetails extends React.Component {
   constructor(props) {
