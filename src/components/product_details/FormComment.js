@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactStars from 'react-stars';
 import { Button, Form } from '../../style/style';
+
 class FormComment extends React.Component {
   render() {
     const { onChange, onClick, comment, starsChange } = this.props;

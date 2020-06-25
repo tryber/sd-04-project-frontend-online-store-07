@@ -106,7 +106,7 @@ export const Form = styled.form`
   }
 
   div {
-    margin: 1em;
+    margin: 0.30em;
   }
 `;
 
@@ -129,8 +129,12 @@ export const Main = styled.article`
     border-radius: 5px;
   }
 
-  ul {
-
+  ul li {
+    list-style-type: circle;
+    font-size: 1.35vw;
+    line-height: 1.5;
+    color: #3C096C;
+    font-weight: 600;
   }
 `;
 
@@ -149,6 +153,7 @@ export const Article = styled.article`
   `}
 
   p {
+    font-size: 1.5vw;
     font-weight: 600;
   }
 `;
@@ -242,6 +247,6 @@ export const Sort = styled.div`
 `;
 
 export const ImagemProduct = styled.img`
-  width: 10em;
-  height: 10em;
+  width: 15em;
+  height: 15em;
 `;
