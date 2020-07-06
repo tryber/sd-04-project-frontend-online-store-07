@@ -131,7 +131,7 @@ export const Main = styled.article`
 
   ul li {
     list-style-type: circle;
-    font-size: 1.35vw;
+    font-size: 1.2vw;
     line-height: 1.5;
     color: #3C096C;
     font-weight: 600;
@@ -153,7 +153,7 @@ export const Article = styled.article`
   `}
 
   p {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-weight: 600;
   }
 `;
@@ -247,8 +247,8 @@ export const Sort = styled.div`
 `;
 
 export const ImagemProduct = styled.img`
-  width: 15em;
-  height: 15em;
+  width: 13em;
+  height: 13em;
 `;
 
 export const CSSFooter = styled.footer`

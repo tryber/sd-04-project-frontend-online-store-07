@@ -1,12 +1,13 @@
 import React from 'react';
 import FormComment from './FormComment';
+import { Card } from '../../style/style';
 
 function post(rating, comment) {
   return (
-    <div className="comment">
+    <Card className="comment">
       <span>{`Pontuação ${rating}`}</span>
       <p>{comment}</p>
-    </div>
+    </Card>
   );
 }
 
