@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Brand from '../components/_general/Brand';
-import { Container, Header, NavBar, Button, Main, Section, Itens } from '../style/style';
+import { Container, Header, NavBar, Button, Main, Section, Td } from '../style/style';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -30,24 +30,26 @@ class ShoppingCart extends React.Component {
     const { cartItems } = this.state;
     return cartItems.length === 0 ? (
       <div data-testid="shopping-cart-empty-message">
-        <Itens>
-          <p>Seu carrinho está vazio</p>
-        </Itens>
+        <p>Seu carrinho está vazio</p>
       </div>
     ) : (
       cartItems.map((item) => (
-        <div key={`${this.getQuantity(item.title)}`}>
-          <Itens data-testid="shopping-cart-product-name">
-            {item.title}
-          </Itens>
-          <Itens data-testid="shopping-cart-product-quantity">
-            <p>{`Quantidade: ${this.getQuantity(item.title)}`}</p>
-            <p>{`Preço: R$${item.price.toFixed(2)}`}</p>
-          </Itens>
-          <Itens>
-            <img src={item.thumbnail} alt={item.title} />
-          </Itens>
-        </div>
+        <table key={`${this.getQuantity(item.title)}`}>
+          <tr>
+            <Td>
+              <img src={item.thumbnail} alt={item.title} />
+            </Td>
+            <Td data-testid="shopping-cart-product-name">
+              {item.title}
+            </Td>
+            <Td data-testid="shopping-cart-product-quantity">
+              {this.getQuantity(item.title)}
+            </Td>
+            <Td>
+              {`Preço: R$${item.price.toFixed(2)}`}
+            </Td>
+          </tr>
+        </table>
       ))
     );
   }

@@ -116,8 +116,6 @@ export const Main = styled.article`
   margin: 0.5em 2em;
   padding: 0.5em;
 
-
-
   h3 {
     color: #3C096C;
     text-align: center;
@@ -258,7 +256,7 @@ export const ImagemProduct = styled.img`
   height: 13em;
 `;
 
-export const Itens = styled.div`
+export const Td = styled.td`
   
 `;
 
