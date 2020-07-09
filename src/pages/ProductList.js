@@ -57,10 +57,8 @@ class ProductList extends Component {
   Categories() {
     return (
       <div>
-        <div className="categories">
-          <h3>Categorias:</h3>
-          <Categories onChange={this.Requisition} />
-        </div>
+        <h3>Categorias:</h3>
+        <Categories onChange={this.Requisition} />
       </div>
     );
   }

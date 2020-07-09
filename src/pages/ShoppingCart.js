@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Brand from '../components/_general/Brand';
-import { Container, Header, NavBar } from '../style/style';
+import { Container, Header, NavBar, Button, Main, Section, Itens } from '../style/style';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -29,18 +29,24 @@ class ShoppingCart extends React.Component {
   renderItems() {
     const { cartItems } = this.state;
     return cartItems.length === 0 ? (
-      <div className="shopping-cart-empty" data-testid="shopping-cart-empty-message">
-        Seu carrinho está vazio
+      <div data-testid="shopping-cart-empty-message">
+        <Itens>
+          <p>Seu carrinho está vazio</p>
+        </Itens>
       </div>
     ) : (
       cartItems.map((item) => (
         <div key={`${this.getQuantity(item.title)}`}>
-          <span data-testid="shopping-cart-product-name" className="item-title">
+          <Itens data-testid="shopping-cart-product-name">
             {item.title}
-          </span>
-          <span data-testid="shopping-cart-product-quantity" className="item-quantity">
-            {this.getQuantity(item.title)}
-          </span>
+          </Itens>
+          <Itens data-testid="shopping-cart-product-quantity">
+            <p>{`Quantidade: ${this.getQuantity(item.title)}`}</p>
+            <p>{`Preço: R$${item.price.toFixed(2)}`}</p>
+          </Itens>
+          <Itens>
+            <img src={item.thumbnail} alt={item.title} />
+          </Itens>
         </div>
       ))
     );
@@ -55,16 +61,18 @@ class ShoppingCart extends React.Component {
             <NavBar space />
           </Header>
         </Container>
-        <div className="shopping-cart">
-          <i data-testeid="shopping-cart-button" />
-          <p>Carrinho de Compras</p>
-          {this.renderItems()}
-          <Link to="/checkout">
-            <button type="button" data-testid="checkout-products">
-              Concluir Compra
-            </button>
-          </Link>
-        </div>
+        <Section center>
+          <Main>
+            <i data-testeid="shopping-cart-button" />
+            <h3>Carrinho de Compras</h3>
+            {this.renderItems()}
+            <Link to="/checkout">
+              <Button details type="button" data-testid="checkout-products">
+                Concluir Compra
+              </Button>
+            </Link>
+          </Main>
+        </Section>
       </div>
     );
   }

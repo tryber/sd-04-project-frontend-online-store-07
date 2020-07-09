@@ -47,7 +47,7 @@ class Checkout extends React.Component {
             <NavBar space />
           </Header>
         </Container>
-        <Section checkoutPage>
+        <Section center>
           <Section form>
             <UserInfo />
           </Section>

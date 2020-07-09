@@ -72,7 +72,7 @@ export const Section = styled.section`
     align-items: center;
   `}
 
-  ${(props) => props.checkoutPage && css`
+  ${(props) => props.center && css`
     flex-direction: column;
     align-items: center;
   `}
@@ -115,14 +115,13 @@ export const Main = styled.article`
   min-width: 20%;
   margin: 0.5em 2em;
   padding: 0.5em;
-  /* display: flex; */
+
+
 
   h3 {
-    /* color: #E0AAFF; */
     color: #3C096C;
     text-align: center;
     text-transform: uppercase;
-    /* background-color: #3C096C; */
     background-color: #fbab7e;
     padding: 0.5em;
     margin: 0.40em;
@@ -184,14 +183,14 @@ export const Aside = styled.aside`
 
 export const Card = styled.div`
   border: 2px solid #3c096c;
-  max-width: 295px;
+  max-width: 290px;
   max-height: 350px;
   box-sizing: border-box;
   margin: 0.5em;
   padding: 0.3em;
 
   ${(props) => props.title && css`
-    height: 60px;
+    height: 58px;
     border: none;
     overflow: hidden;
   `};
@@ -207,6 +206,7 @@ export const Button = styled.button`
     color: white;
     border: 2px solid #3c096c;
     border-radius: 3px;
+    font-size: 0.9em;
   `};
 
   ${(props) => props.search && css`
@@ -256,6 +256,10 @@ export const Sort = styled.div`
 export const ImagemProduct = styled.img`
   width: 13em;
   height: 13em;
+`;
+
+export const Itens = styled.div`
+  
 `;
 
 export const CSSFooter = styled.footer`
