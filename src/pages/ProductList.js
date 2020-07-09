@@ -13,7 +13,7 @@ import Footer from '../components/_general/Footer';
 function goToChart() {
   return (
     <Link to="/cart" data-testid="shopping-cart-button">
-      <i className="fas fa-shopping-cart fa-2x" />
+      <i className="fas fa-shopping-cart fa-2x" style={{ color: '#3c096c' }} />
     </Link>
   );
 }

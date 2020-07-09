@@ -184,10 +184,17 @@ export const Aside = styled.aside`
 
 export const Card = styled.div`
   border: 2px solid #3c096c;
-  max-width: 30%;
-  max-height: 10%;
+  max-width: 295px;
+  max-height: 350px;
+  box-sizing: border-box;
   margin: 0.5em;
   padding: 0.3em;
+
+  ${(props) => props.title && css`
+    min-height: 60px;
+    border: none;
+    overflow: hidden;
+  `};
 `;
 
 export const Button = styled.button`
@@ -201,7 +208,7 @@ export const Button = styled.button`
     border: 2px solid #3c096c;
     border-radius: 3px;
   `};
-  
+
   ${(props) => props.search && css`
       color: #5a189a;
       background: transparent;
