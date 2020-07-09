@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
@@ -9,14 +8,8 @@ import '../style/style.css';
 import { Container, Main, Aside, Section, Header, NavBar } from '../style/style';
 import Brand from '../components/_general/Brand';
 import Footer from '../components/_general/Footer';
+import goToChart from '../components/_general/goToCart';
 
-function goToChart() {
-  return (
-    <Link to="/cart" data-testid="shopping-cart-button">
-      <i className="fas fa-shopping-cart fa-2x" style={{ color: '#3c096c' }} />
-    </Link>
-  );
-}
 class ProductList extends Component {
   constructor(props) {
     super(props);

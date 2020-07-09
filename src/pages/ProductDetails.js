@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-constructor */
-import { Link } from 'react-router-dom';
 import React from 'react';
 import InfoProduct from '../components/product_details/infoProduct';
 import Comment from '../components/product_details/Comment';
@@ -7,6 +6,7 @@ import getItemForId from '../services/apiId';
 import Brand from '../components/_general/Brand';
 import Footer from '../components/_general/Footer';
 import { Container, Header, NavBar } from '../style/style';
+import goToChart from '../components/_general/goToCart';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -28,9 +28,7 @@ class ProductDetails extends React.Component {
               <Brand />
               <NavBar space2/>
               <NavBar cart>
-                <Link to="/cart" data-testid="shopping-cart-button">
-                  <i className="fas fa-shopping-cart fa-2x" />
-                </Link>
+                {goToChart()}
               </NavBar>
             </Header>
           </Container>

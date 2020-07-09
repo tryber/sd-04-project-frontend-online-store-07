@@ -265,7 +265,7 @@ export const CSSFooter = styled.footer`
   text-align: center;
   width: 100%;
   margin-bottom: 0;
-  margin-top: 1em;
+  margin-top: 5em;
   padding: 1em;
   font-size: 1vw;
   font-weight: 700;

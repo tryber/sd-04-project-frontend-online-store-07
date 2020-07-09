@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <CSSFooter>
-        <p>Create by: Alice Atalla, Jessica Tavares and Matheus Domingos</p>
+        <p>Criado por: Alice Atalla, Jessica Tavares e Matheus Domingos.</p>
       </CSSFooter>
     );
   }
