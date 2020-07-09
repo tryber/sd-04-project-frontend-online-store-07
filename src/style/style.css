@@ -42,3 +42,7 @@
 .address-input {
   width: 50em;
 }
+
+.show-value {
+  padding: 2em;
+}

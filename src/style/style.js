@@ -191,7 +191,7 @@ export const Card = styled.div`
   padding: 0.3em;
 
   ${(props) => props.title && css`
-    min-height: 60px;
+    height: 60px;
     border: none;
     overflow: hidden;
   `};

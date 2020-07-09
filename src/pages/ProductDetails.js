@@ -23,17 +23,17 @@ class ProductDetails extends React.Component {
     const { product } = this.state;
     return (
       <div>
-          <Container>
-            <Header>
-              <Brand />
-              <NavBar space2/>
-              <NavBar cart>
-                {goToChart()}
-              </NavBar>
-            </Header>
-          </Container>
-          <InfoProduct product={product} />
-          <Comment />
+        <Container>
+          <Header>
+            <Brand />
+            <NavBar space2 />
+            <NavBar cart>
+              {goToChart()}
+            </NavBar>
+          </Header>
+        </Container>
+        <InfoProduct product={product} />
+        <Comment />
         <Footer />
       </div>
     );
