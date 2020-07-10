@@ -313,9 +313,18 @@ export const CSSFooter = styled.footer`
   font-size: 1vw;
   font-weight: 700;
   color: #3C096C;
+  box-sizing: border-box;
 `;
 
 export const Load = styled.div`
+  background-color: white;
+  width: 1390px;
+  height: 1000px;
+  position: absolute;
+  margin-top: -240px;
+  margin-left: -40px;
+  z-index:99;
+
 ul {
   position: absolute;
   top: 50%;
