@@ -16,7 +16,7 @@ class FormComment extends React.Component {
             onChange={starsChange}
             size={24}
             color2={'#ffd700'}
-            />
+          />
         </div>
         <div>
           <label htmlFor="comment">

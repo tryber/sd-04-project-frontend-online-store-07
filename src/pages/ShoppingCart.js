@@ -34,22 +34,22 @@ class ShoppingCart extends React.Component {
       </div>
     ) : (
       cartItems.map((item) => (
-        <Table key={`${this.getQuantity(item.title)}`}>
+        <table className="cartList" key={`${this.getQuantity(item.title)}`}>
           <tr>
-            <Td imagem>
+            <td className="imagem">
               <img src={item.thumbnail} alt={item.title} />
-            </Td>
-            <Td titulo data-testid="shopping-cart-product-name">
+            </td>
+            <td className="titulo" data-testid="shopping-cart-product-name">
               {item.title}
-            </Td>
-            <Td quantidade data-testid="shopping-cart-product-quantity">
+            </td>
+            <td className="quantidade" data-testid="shopping-cart-product-quantity">
               {this.getQuantity(item.title)}
-            </Td>
-            <Td preco>
+            </td>
+            <td className="preco">
               {`R$${item.price.toFixed(2)}`}
-            </Td>
+            </td>
           </tr>
-        </Table>
+        </table>
       ))
     );
   }

@@ -1,12 +1,11 @@
 import React from 'react';
-import { CSSFooter } from '../../style/style';
 
 class Footer extends React.Component {
   render() {
     return (
-      <CSSFooter>
+      <div className="footer">
         <p>Criado por: Alice Atalla, Jessica Tavares e Matheus Domingos.</p>
-      </CSSFooter>
+      </div>
     );
   }
 }

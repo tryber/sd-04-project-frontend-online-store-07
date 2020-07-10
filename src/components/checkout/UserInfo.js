@@ -69,7 +69,6 @@ class UserInfo extends React.Component {
         />
         <FormInput
           label="CEP:"
-          caracters={8}
           name="cep"
           value={cep}
           test="checkout-cep"

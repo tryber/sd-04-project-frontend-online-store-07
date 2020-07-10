@@ -3,7 +3,7 @@ import { Load } from '../../style/style';
 
 function Loading() {
   return (
-    <Load>
+    <div className="load">
       <ul>
         <li />
         <li />
@@ -11,7 +11,7 @@ function Loading() {
         <li />
         <li />
       </ul>
-    </Load>
+    </div>
   );
 }
 

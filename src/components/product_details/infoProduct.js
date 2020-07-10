@@ -3,7 +3,7 @@ import freeShipping from '../../media/shipp.png';
 import AddAndDecrease from './AddAndDecrease';
 import AddToCart from '../_general/addToCartButton';
 import Loading from '../_general/Loading';
-import { Article, ImagemProduct, Container, Main } from '../../style/style';
+import { Article, Container, Main } from '../../style/style';
 
 function FreeShipping() {
   return (
@@ -34,26 +34,26 @@ class infoProduct extends React.Component {
     const { price, thumbnail, title, attributes, shipping } = this.props.product;
     const availableQuantity = this.props.product.available_quantity;
     const quantity = this.state.quantity;
-    if (!this.props.product) return <Loading />
+    if (!this.props.product) return <Loading />;
     return (
       <Container>
         <Article product>
           <h3 data-testid="product-detail-name">{title}</h3>
-          <ImagemProduct src={thumbnail} alt={title} />
+          <img className="imagemProduct" src={thumbnail} alt={title} />
           {(shipping.free_shipping) && FreeShipping() }
           <p>{`Preço: $${price}`}</p>
-            <p>Quantidade Disponível: {availableQuantity}</p>
-            <AddAndDecrease callback={this.HandleAddDecrease} value={quantity} />
+          <p>Quantidade Disponível: {availableQuantity}</p>
+          <AddAndDecrease callback={this.HandleAddDecrease} value={quantity} />
           <div>
             <AddToCart item={this.props.product} testid="product-detail-add-to-cart" />
           </div>
         </Article>
         <Main>
-            <h3>Informações Adicionais: </h3>
-            <ul>
-              {attributes.map((attribute) => (<li key={attribute.id}>
-                {attribute.name}: {attribute.value_name}</li>))}
-            </ul>
+          <h3>Informações Adicionais: </h3>
+          <ul>
+            {attributes.map((attribute) => (<li key={attribute.id}>
+              {attribute.name}: {attribute.value_name}</li>))}
+          </ul>
         </Main>
       </Container>
     );
