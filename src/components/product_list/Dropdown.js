@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sort } from '../../style/style';
 
 class Dropdown extends React.Component {
   render() {

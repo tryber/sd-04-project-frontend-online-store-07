@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Brand from '../components/_general/Brand';
-import { Container, Header, NavBar, Button, Main, Section, Td, Table } from '../style/style';
+import { Container, Header, NavBar, Button, Main, Section } from '../style/style';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
