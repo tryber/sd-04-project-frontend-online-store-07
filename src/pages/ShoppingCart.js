@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Brand from '../components/_general/Brand';
+import { Container, Header, NavBar, Button, Main, Section } from '../style/style';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -27,37 +29,52 @@ class ShoppingCart extends React.Component {
   renderItems() {
     const { cartItems } = this.state;
     return cartItems.length === 0 ? (
-      <div className="shopping-cart-empty" data-testid="shopping-cart-empty-message">
-        Seu carrinho está vazio
+      <div data-testid="shopping-cart-empty-message">
+        <p>Seu carrinho está vazio. Adicione produtos para finalizar!</p>
       </div>
     ) : (
       cartItems.map((item) => (
-        <div key={`${this.getQuantity(item.title)}`}>
-          <span data-testid="shopping-cart-product-name" className="item-title">
-            {item.title}
-          </span>
-          <span data-testid="shopping-cart-product-quantity" className="item-quantity">
-            {this.getQuantity(item.title)}
-          </span>
-        </div>
+        <table className="cartList" key={`${this.getQuantity(item.title)}`}>
+          <tr>
+            <td className="imagem">
+              <img src={item.thumbnail} alt={item.title} />
+            </td>
+            <td className="titulo" data-testid="shopping-cart-product-name">
+              {item.title}
+            </td>
+            <td className="quantidade" data-testid="shopping-cart-product-quantity">
+              {this.getQuantity(item.title)}
+            </td>
+            <td className="preco">
+              {`R$${item.price.toFixed(2)}`}
+            </td>
+          </tr>
+        </table>
       ))
     );
   }
 
   render() {
     return (
-      <div className="shopping-cart">
-        <br />
-        <i data-testeid="shopping-cart-button" />
-        <p>Carrinho de Compras</p>
-        {this.renderItems()}
-        <div>
-          <Link to="/checkout">
-            <button type="button" data-testid="checkout-products">
-              Concluir Compra
-            </button>
-          </Link>
-        </div>
+      <div>
+        <Container>
+          <Header>
+            <Brand />
+            <NavBar space />
+          </Header>
+        </Container>
+        <Section center>
+          <Main>
+            <i data-testeid="shopping-cart-button" />
+            <h3>Carrinho de Compras</h3>
+            {this.renderItems()}
+            <Link to="/checkout">
+              <Button details type="button" data-testid="checkout-products">
+                Concluir Compra
+              </Button>
+            </Link>
+          </Main>
+        </Section>
       </div>
     );
   }

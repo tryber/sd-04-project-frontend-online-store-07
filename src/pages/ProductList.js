@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Categories from '../components/product_list/Categories';
 import Product from '../components/product_list/Product';
 import Search from '../components/product_list/Search';
 import Dropdown from '../components/product_list/Dropdown';
-import './ProductList.css';
 import * as api from '../services/api';
+import '../style/style.css';
+import { Container, Main, Aside, Section, Header, NavBar } from '../style/style';
+import Brand from '../components/_general/Brand';
+import Footer from '../components/_general/Footer';
+import goToChart from '../components/_general/goToCart';
 
-function goToChart() {
-  return (
-    <Link to="/cart" data-testid="shopping-cart-button">
-      Ir para o Carrinho
-    </Link>
-  );
-}
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +44,7 @@ class ProductList extends Component {
 
   headerSearch() {
     return (
-      <div className="search">
+      <div>
         <Search
           value={this.state.searchValue}
           onChange={this.OnChangeSearchBar}
@@ -61,10 +57,8 @@ class ProductList extends Component {
   Categories() {
     return (
       <div>
-        <div className="categories">
-          <p>Categorias:</p>
-          <Categories onChange={this.Requisition} />
-        </div>
+        <h3>Categorias:</h3>
+        <Categories onChange={this.Requisition} />
       </div>
     );
   }
@@ -83,39 +77,73 @@ class ProductList extends Component {
     }
   }
 
-  render() {
-    const { products } = this.state;
-
-    if (products === '') {
-      return (
-        <div>
-          {this.headerSearch()}
-          <div className="main">
-            {this.Categories()}
-            {goToChart()}
-            <div data-testid="home-initial-message">
-              Digite algum termo de pesquisa ou escolha uma categoria.
-            </div>
-          </div>
-        </div>
-      );
-    }
+  renderWithoutProduct() {
     return (
       <div>
-        {this.headerSearch()}
-        {goToChart()}
-        <div className="main">
-          <Dropdown sort={this.handleChangeSort} />
-          {this.Categories()}
-          <div className="products">
+        <Container>
+          <Header>
+            <Brand />
+            <NavBar>
+              {this.headerSearch()}
+            </NavBar>
+            <NavBar ordem />
+            <NavBar cart>
+              {goToChart()}
+            </NavBar>
+          </Header>
+        </Container>
+        <Section>
+          <Main>
+            {this.Categories()}
+          </Main>
+          <Aside data-testid="home-initial-message">
+            <h4>Digite algum termo de pesquisa ou escolha uma categoria.</h4>
+          </Aside>
+        </Section>
+        <Footer />
+      </div>
+    );
+  }
+
+  renderWithProduct() {
+    const { products } = this.state;
+    return (
+      <div>
+        <Container>
+          <Header>
+            <Brand />
+            <NavBar>
+              {this.headerSearch()}
+            </NavBar>
+            <NavBar>
+              <Dropdown sort={this.handleChangeSort} />
+            </NavBar>
+            <NavBar cart>
+              {goToChart()}
+            </NavBar>
+          </Header>
+        </Container>
+        <Section>
+          <Main>
+            {this.Categories()}
+          </Main>
+          <Aside card>
             {products.map((elem) => (
               <Product key={elem.id} product={elem} />
             ))}
-
-          </div>
-        </div>
+          </Aside>
+        </Section>
+        <Footer />
       </div>
     );
+  }
+
+  render() {
+    const { products } = this.state;
+    if (products === '') {
+      return this.renderWithoutProduct();
+    }
+    return this.renderWithProduct();
   }
 }
 

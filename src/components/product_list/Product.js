@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Product.css';
 import freeShipping from '../../media/shipp.png';
-import AddToCart from '../../components/addToCartButton';
+import AddToCart from '../_general/addToCartButton';
+import '../../style/style.css';
+import { Button, Section, Card } from '../../style/style';
 
 function FreeShipping() {
   return (
@@ -19,26 +20,24 @@ class Product extends React.Component {
   render() {
     const { thumbnail, title, price, id, shipping } = this.props.product;
     return (
-      <div className="container" data-testid="product">
-        <div className="product">
+      <Card data-testid="product">
+        <Card title>
           <h3>{title}</h3>
-          <div className="images">
-            <img src={thumbnail} className="image-detail" alt={title} />
-            {(shipping.free_shipping) && FreeShipping() }
-          </div>
-          <p>{`Preço: ${price}`}</p>
-          <div className="button-container">
-            <div className="buttomShop">
-              <Link to={`/product/${id}`} data-testid="product-detail-link">
-                Ver detalhes
-              </Link>
-            </div>
-            <div className="buttomShop">
-              <AddToCart testid="product-add-to-cart" item={this.props.product} />
-            </div>
-          </div>
+        </Card>
+        <Section image>
+          <img src={thumbnail} alt={title} />
+          {(shipping.free_shipping) && FreeShipping() }
+        </Section>
+        <p>{`Preço: R$${price.toFixed(2)}`}</p>
+        <div>
+          <Section buttons>
+            <Link to={`/product/${id}`} data-testid="product-detail-link">
+              <Button details type="button">Ver detalhes</Button>
+            </Link>
+            <AddToCart testid="product-add-to-cart" item={this.props.product} />
+          </Section>
         </div>
-      </div>
+      </Card>
     );
   }
 }
