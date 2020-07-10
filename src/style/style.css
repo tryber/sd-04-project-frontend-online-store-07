@@ -110,7 +110,11 @@ td {
   padding: 0.5em;
 }
 
-.sort select:focus , 
+.sort select:focus {
+  border: 2px solid #3c096c;
+  outline: none;
+}
+
 .sort select:hover {
   border: 2px solid #3c096c;
   outline: none;
