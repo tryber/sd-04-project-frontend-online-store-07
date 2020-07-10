@@ -115,11 +115,6 @@ td {
   outline: none;
 }
 
-.sort select:hover {
-  border: 2px solid #3c096c;
-  outline: none;
-}
-
 .sort option {
   background: #f7ce68;
   color: #240046;
