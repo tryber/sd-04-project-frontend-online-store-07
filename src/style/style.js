@@ -256,8 +256,38 @@ export const ImagemProduct = styled.img`
   height: 13em;
 `;
 
+export const Table = styled.table`
+  border-collapse: collapse;
+  width: 670px;
+`;
+
 export const Td = styled.td`
-  
+border-width: 1px 2px 1px 2px;
+border-style: solid;
+border-color: rgb(189, 187, 187);
+
+  ${(props) => props.imagem && css`
+    width: 100px;
+    heigth: 100px;
+    text-align: center;
+  `};
+
+  ${(props) => props.titulo && css`
+    width: 410px;
+    padding: 0 0.5em 0 1em;
+    box-sizing: border-box;
+  `};
+
+  ${(props) => props.quantidade && css`
+    box-sizing: border-box;
+    width: 40px;
+    text-align: center;
+  `};
+
+  ${(props) => props.preco && css`
+    box-sizing: border-box;
+    text-align: center;
+  `};
 `;
 
 export const CSSFooter = styled.footer`

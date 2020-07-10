@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Brand from '../components/_general/Brand';
-import { Container, Header, NavBar, Button, Main, Section, Td } from '../style/style';
+import { Container, Header, NavBar, Button, Main, Section, Td, Table } from '../style/style';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -34,22 +34,22 @@ class ShoppingCart extends React.Component {
       </div>
     ) : (
       cartItems.map((item) => (
-        <table key={`${this.getQuantity(item.title)}`}>
+        <Table key={`${this.getQuantity(item.title)}`}>
           <tr>
-            <Td>
+            <Td imagem>
               <img src={item.thumbnail} alt={item.title} />
             </Td>
-            <Td data-testid="shopping-cart-product-name">
+            <Td titulo data-testid="shopping-cart-product-name">
               {item.title}
             </Td>
-            <Td data-testid="shopping-cart-product-quantity">
+            <Td quantidade data-testid="shopping-cart-product-quantity">
               {this.getQuantity(item.title)}
             </Td>
-            <Td>
-              {`Preço: R$${item.price.toFixed(2)}`}
+            <Td preco>
+              {`R$${item.price.toFixed(2)}`}
             </Td>
           </tr>
-        </table>
+        </Table>
       ))
     );
   }
