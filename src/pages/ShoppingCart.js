@@ -30,7 +30,7 @@ class ShoppingCart extends React.Component {
     const { cartItems } = this.state;
     return cartItems.length === 0 ? (
       <div data-testid="shopping-cart-empty-message">
-        <p>Seu carrinho está vazio</p>
+        <p>Seu carrinho está vazio. Adicione produtos para finalizar!</p>
       </div>
     ) : (
       cartItems.map((item) => (

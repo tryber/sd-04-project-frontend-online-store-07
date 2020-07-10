@@ -116,6 +116,11 @@ export const Main = styled.article`
   margin: 0.5em 2em;
   padding: 0.5em;
 
+  p {
+    font-size: 20px;
+    margin: 50px;
+  }
+
   h3 {
     color: #3C096C;
     text-align: center;
