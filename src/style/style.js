@@ -121,6 +121,11 @@ export const Main = styled.article`
     margin: 50px;
   }
 
+  h4 {
+    font-weight: 400;
+    margin: 1.3em;
+  }
+
   h3 {
     color: #3C096C;
     text-align: center;
