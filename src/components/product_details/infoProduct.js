@@ -2,7 +2,8 @@ import React from 'react';
 import freeShipping from '../../media/shipp.png';
 import AddAndDecrease from './AddAndDecrease';
 import AddToCart from '../_general/addToCartButton';
-import { Article, ImagemProduct, Container, Main } from '../../style/style'
+import Loading from '../_general/Loading';
+import { Article, ImagemProduct, Container, Main } from '../../style/style';
 
 function FreeShipping() {
   return (
@@ -33,7 +34,7 @@ class infoProduct extends React.Component {
     const { price, thumbnail, title, attributes, shipping } = this.props.product;
     const availableQuantity = this.props.product.available_quantity;
     const quantity = this.state.quantity;
-    if (!this.props.product) return <h1>Loading...</h1>;
+    if (!this.props.product) return <Loading />
     return (
       <Container>
         <Article product>
